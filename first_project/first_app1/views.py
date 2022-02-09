@@ -8,5 +8,5 @@ def index(request):
 def user_page(request, user_name):
     return HttpResponse(f'<h1>{user_name}\'s page</h1>')
 
-def number_page(request, number):
-    return HttpResponse(f'<h1>page number = {number}</h1>')
+def number_page(request, user_name, number):
+    return HttpResponse(f'<h1>{user_name}\'s page number = {number}</h1>')
