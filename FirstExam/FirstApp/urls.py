@@ -5,4 +5,5 @@ app_name = 'first'
 
 urlpatterns = [
     path('add/<int:num1>/<int:num2>', views.add, name='add'),
+    path('minus/<int:num1>/<int:num2>', views.minus, name='minus'),
 ]
