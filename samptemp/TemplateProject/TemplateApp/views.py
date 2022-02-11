@@ -13,4 +13,8 @@ def home(request):
         "age": 70
     }
 
-    return render(request, )
+    return render(request, "home.html", context={
+        "my_name": my_name,
+        "favorite_fruit": favorite_fruit,
+        "my_info": my_info
+    })
