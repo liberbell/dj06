@@ -2,4 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'TemplateApp/index.html', context={'value': "Hello!!!"})
+    val = "This is the value input."
+    return render(request, 'TemplateApp/index.html', context={'value': val})
