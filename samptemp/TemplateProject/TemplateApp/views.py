@@ -36,3 +36,8 @@ def sample(request):
         "Strawberry",
         "Peach"
     ]
+    message1 = '''Hello
+    My name is
+    Alex.
+    '''
+    message2 = "1234567890"
