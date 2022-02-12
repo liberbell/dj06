@@ -41,3 +41,9 @@ def sample(request):
     Alex.
     '''
     message2 = "1234567890"
+    return render(request, "sample.html", context={
+        "name": name,
+        "height": height,
+        "weight": weight,
+        "bmi": bmi,
+    })
