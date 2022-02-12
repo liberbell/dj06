@@ -29,4 +29,10 @@ def sample(request):
     name = "Alex Hep"
     height = 172.4
     weight = 56
-    bmi = weight / (height / 100)
+    bmi = weight / (height / 100) ** 2
+    page_url = "HomePage: https://www.google.com"
+    favorite_fruit = [
+        "Apple",
+        "Strawberry",
+        "Peach"
+    ]
