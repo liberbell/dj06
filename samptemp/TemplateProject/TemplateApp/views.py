@@ -46,4 +46,8 @@ def sample(request):
         "height": height,
         "weight": weight,
         "bmi": bmi,
+        "page_url": page_url,
+        "favorite_fruit": favorite_fruit,
+        "message1": message1,
+        "message2": message2,
     })
