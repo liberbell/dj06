@@ -24,3 +24,9 @@ def sample1(request):
 
 def sample2(request):
     return render(request, "sample2.html")
+
+def sample(request):
+    name = "Alex Hep"
+    height = 172.4
+    weight = 56
+    bmi = weight / (height / 100)
