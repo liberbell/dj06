@@ -41,6 +41,7 @@ def sample(request):
     Alex.
     '''
     message2 = "1234567890"
+    salary = 34000
     return render(request, "sample.html", context={
         "name": name,
         "height": height,
@@ -50,4 +51,5 @@ def sample(request):
         "favorite_fruit": favorite_fruit,
         "message1": message1,
         "message2": message2,
+        "salary": salary,
     })
