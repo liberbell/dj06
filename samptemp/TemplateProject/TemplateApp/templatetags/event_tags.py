@@ -11,3 +11,7 @@ def convert_status_to_string(status):
         return "error"
     elif status == 30:
         return "pending"
+    elif status == 40:
+        return "failed"
+    else:
+        return "Unknown status"
