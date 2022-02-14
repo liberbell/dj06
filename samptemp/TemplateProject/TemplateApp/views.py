@@ -17,7 +17,8 @@ def home(request):
     return render(request, "home.html", context={
         "my_name": my_name,
         "favorite_fruit": favorite_fruit,
-        "my_info": my_info
+        "my_info": my_info,
+        "status": status,
     })
 
 def sample1(request):
@@ -43,7 +44,6 @@ def sample(request):
     '''
     message2 = "1234567890"
     salary = 34000
-    status = 20
     return render(request, "sample.html", context={
         "name": name,
         "height": height,
@@ -54,5 +54,4 @@ def sample(request):
         "message1": message1,
         "message2": message2,
         "salary": salary,
-        "status": status
     })
