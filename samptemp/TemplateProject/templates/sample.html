@@ -1,3 +1,4 @@
+{% load static %}
 <h1>{{ name | upper }}</h1>
 <h1>{{ page_url | urlize }}</h1>
 <p>BMI: {{ bmi | floatformat:2 }}</p>
@@ -15,3 +16,4 @@
 {% endfilter %}
 
 <a href="{% url "template_app:home" first_name="Bob" last_name="Mary" %}">home</a>
+<img src="{% static "sample.jpg" %}>
