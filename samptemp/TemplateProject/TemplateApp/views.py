@@ -55,3 +55,10 @@ def sample(request):
         "message2": message2,
         "salary": salary,
     })
+
+class Country:
+
+    def __init__(self, name, population, capital):
+        self.name = name
+        self.population = population
+        self.capital = capital
