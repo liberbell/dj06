@@ -21,4 +21,6 @@ def home(request):
     return render(request, "home.html")
 
 def members(request):
-    
+    return render(request, "members.html", context={
+        "members": member_list
+    })
