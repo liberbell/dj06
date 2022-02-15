@@ -24,3 +24,6 @@ def members(request):
     return render(request, "members.html", context={
         "members": member_list
     })
+
+def member(request, id):
+    return render(request, "member_detail.html", )
