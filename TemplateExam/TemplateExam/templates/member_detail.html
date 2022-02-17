@@ -6,4 +6,5 @@
     <img src="{% static member.picture_path %}">
     <p>Name: {{ member.name }}</p>
     <p>Join Date: {{ member.join_at }}</p>
+    <p>Days from join date: {{ member.join_at | calculate_datetime_to_now }}</p>
 {% endblock  %}
