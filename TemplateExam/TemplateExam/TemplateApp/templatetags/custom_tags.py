@@ -3,7 +3,7 @@ from django import template
 from datetime import datetime
 import math
 
-register = template.library()
+register = template.Library()
 
 @register.filter(name="calculate_datetime_to_now")
 def calculate_datetime_to_now(value):
