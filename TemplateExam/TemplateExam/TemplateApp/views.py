@@ -7,7 +7,7 @@ class Member:
     def __init__(self, id, name, join_at, picture_path):
         self.id = id
         self.name = name
-        self.join_at: join_at
+        self.join_at = join_at
         self.picture_path = picture_path
 
 member_list = [
