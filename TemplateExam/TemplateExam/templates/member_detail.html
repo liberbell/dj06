@@ -2,6 +2,7 @@
 {% block title %}Member Detail{{ block.super }}{% endblock  %}
 {% block content %}
 {% load static %}
+{% load custom_tags %}
     <h1>Member Detail</h1>
     <img src="{% static member.picture_path %}">
     <p>Name: {{ member.name }}</p>
