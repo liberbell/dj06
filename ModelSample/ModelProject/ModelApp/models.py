@@ -7,3 +7,5 @@ class Person(models.Model):
 
 class Sales(models.Model):
     fee = models.IntegerField
+    create_at = models.DateTimeField()
+    update_at = models.DateTimeField()
