@@ -1,3 +1,4 @@
+from pickle import TRUE
 from django.db import models
 from django.utils import timezone
 
@@ -5,6 +6,9 @@ from django.utils import timezone
 class BaseMeta(models.Model):
     create_at = models.DateTimeField(default=timezone.datetime.now)
     update_at = models.DateTimeField(default=timezone.datetime.now)
+
+    class Meta:
+        abstract = True
 
 class Person(models.Model):
     first_name = models.CharField(max_length=30)
