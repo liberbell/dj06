@@ -11,3 +11,4 @@ p = Person(
     email="bob@example.com", salary=300000, memo="bob memo",
     web_site="www.google.com"
 )
+p.save()
