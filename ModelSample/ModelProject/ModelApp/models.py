@@ -22,5 +22,6 @@ class Person(models.Model):
     class Meta:
         db_table = "person"
         index_together = [["first_name", "last_name"]]
+        ordering = ["salary"]
     
 
