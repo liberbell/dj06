@@ -7,7 +7,7 @@ setup()
 from ModelApp.models import Person
 
 p = Person(
-    first_name = "Bob", last_name = "Mary", birthday = 1960/7/1,
-    email = "bob@example.com", salary = 300000, memo = "bob memo",
-    web_site = "www.google.com"
+    first_name="Bob", last_name="Mary", birthday="1960/7/1",
+    email="bob@example.com", salary=300000, memo="bob memo",
+    web_site="www.google.com"
 )
