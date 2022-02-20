@@ -18,5 +18,9 @@ class Person(models.Model):
     salary = models.FloatField(null=True)
     memo = models.TextField()
     web_site = models.URLField(null=True, blank=True)
+
+    class Meta:
+        db_table = "person"
+        index_together = [["first_name", "last_name"]]
     
 
