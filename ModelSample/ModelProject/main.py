@@ -30,3 +30,5 @@ obj, created = Person.objects.get_or_create(
     email="eric@example.com", salary=150000, memo="class method",
     web_site="None"
 )
+print(ojb)
+print(created)
