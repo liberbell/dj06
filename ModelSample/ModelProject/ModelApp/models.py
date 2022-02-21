@@ -5,7 +5,7 @@ import pytz
 
 # Create your models here.
 class BaseMeta(models.Model):
-    create_at = models.DateTimeField(default=timezone.datetime.now)
+    create_at = models.DateTimeField(default=timezone.datetime.now(pytz.timezone("Asia/Tokyo")))
     update_at = models.DateTimeField(default=timezone.datetime.now)
 
     class Meta:
