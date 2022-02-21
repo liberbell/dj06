@@ -17,4 +17,10 @@ p = Person(
     email="bob@example.com", salary=None, memo="bob memo",
     web_site=""
 )
-p.save()
+# p.save()
+
+Person.objects.create(
+    first_name="Eric", last_name="Clapton",
+    email="eric@example.com", salary=150000, memo="class method",
+    web_site="None"
+)
