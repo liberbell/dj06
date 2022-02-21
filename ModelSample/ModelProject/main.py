@@ -8,7 +8,7 @@ from ModelApp.models import Person
 
 p = Person(
     first_name="Bob", last_name="Mary", birthday="1960-07-01",
-    email="bob@example.com", salary=none, memo="bob memo",
+    email="bob@example.com", salary=None, memo="bob memo",
     web_site="www.google.com"
 )
 p.save()
