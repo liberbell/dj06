@@ -5,3 +5,5 @@ from django import setup
 setup()
 
 from ModelApp.models import Person
+
+persons = Person.objects.all()
