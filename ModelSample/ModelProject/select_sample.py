@@ -10,5 +10,5 @@ persons = Person.objects.all()
 for person in persons:
     print(person.id, person)
 
-persons = person.objects.filter(first_name="Bob").all()
+persons = Person.objects.filter(first_name="Bob", id=2).all()
 print(persons)
