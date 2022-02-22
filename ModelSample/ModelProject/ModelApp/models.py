@@ -1,4 +1,3 @@
-from pickle import TRUE
 from django.db import models
 from django.utils import timezone
 import pytz
@@ -11,7 +10,7 @@ class BaseMeta(models.Model):
     class Meta:
         abstract = True
 
-class Person(models.Model):
+class Person(BaseMeta):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     birthday = models.DateField(default="1900-01-01")
