@@ -9,3 +9,6 @@ from ModelApp.models import Person
 persons = Person.objects.all()
 for person in persons:
     print(person.id, person)
+
+persons = person.objects.filter(first_name="Bob").all()
+print(persons)
