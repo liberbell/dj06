@@ -17,7 +17,7 @@ p = Person(
     email="bob@example.com", salary=None, memo="bob memo",
     web_site=""
 )
-# p.save()
+p.save()
 
 # Person.objects.create(
 #     first_name="Eric", last_name="Clapton",
@@ -25,10 +25,10 @@ p = Person(
 #     web_site="None"
 # )
 
-obj, created = Person.objects.get_or_create(
-    first_name="Elton", last_name="Jhon",
-    email="eric@example.com", salary=370000, memo="class method",
-    web_site="None"
-)
-print(obj)
-print(created)
+# obj, created = Person.objects.get_or_create(
+#     first_name="Elton", last_name="Jhon",
+#     email="eric@example.com", salary=370000, memo="class method",
+#     web_site="None"
+# )
+# print(obj)
+# print(created)
