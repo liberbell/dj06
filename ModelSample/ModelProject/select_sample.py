@@ -8,4 +8,4 @@ from ModelApp.models import Person
 
 persons = Person.objects.all()
 for person in persons:
-    print(person)
+    print(person.id, person)
