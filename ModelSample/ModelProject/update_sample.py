@@ -17,3 +17,4 @@ persons = Person.objects.filter(first_name="Eric").all()
 for person in persons:
     person.first_name = person.first_name.lower()
     person.update_at = timezone.datetime.now(pytz.timezone("Asia/Tokyo"))
+    person.save()
