@@ -20,6 +20,6 @@ for person in persons:
     person.update_at = timezone.datetime.now(pytz.timezone("Asia/Tokyo"))
     # person.save()
 Person.objects.filter(first_name="Bob").update(
-    web_site = "https://yahoo.co.jp"
+    web_site = "https://yahoo.co.jp",
     update_at = timezone.datetime.now(pytz.timezone("Asia/Tokyo"))
 )
