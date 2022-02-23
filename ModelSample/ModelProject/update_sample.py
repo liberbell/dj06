@@ -10,4 +10,5 @@ import pytz
 
 person = Person.objects.get(id=1)
 person.birsthday = "2001-01-01"
+person.update_at = timezone.datetime.now()
 person.save()
