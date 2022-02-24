@@ -10,3 +10,8 @@ from ModelApp.models import Students, Schools, Prefectures
 prefectures = ["Tokyo", "Osaka"]
 schools = ["West side School", "South side School", "East side School", "North side School"]
 students = ["Alex", "Bob", "Elton", "Eric"]
+
+def insert_records():
+    for prefecture_name in prefectures:
+        prefecture = Prefectures
+        name = prefecture_name
