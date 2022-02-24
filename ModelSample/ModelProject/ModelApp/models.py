@@ -45,3 +45,9 @@ class Schools(models.Model):
     prefecture = models.ForeignKey(
         "Prefecture", on_delete=models.CASCADE
     )
+
+    class class Meta:
+        db_table = 'schools'
+
+class Prefectures(models.Model):
+    name = models.CharField(max_length=20)
