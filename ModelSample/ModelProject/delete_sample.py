@@ -9,3 +9,5 @@ from ModelApp.models import Person
 
 Person.objects.filter(first_name="Bob").delete()
 Person.objects.filter(first_name="eric", birthday="1900-01-01").delete()
+
+Person.objects.all().delete()
