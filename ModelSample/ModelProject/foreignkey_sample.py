@@ -16,3 +16,9 @@ def insert_records():
         prefecture = Prefectures(
             name = prefecture_name
         )
+        prefecture.save()
+        for school_name in schools:
+            school = Schools(
+                name = school_name
+                prefecture = prefecture
+            )
