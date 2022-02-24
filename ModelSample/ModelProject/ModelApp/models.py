@@ -1,4 +1,5 @@
 from os import major
+from sys import prefix
 from django.db import models
 from django.utils import timezone
 import pytz
@@ -41,3 +42,6 @@ class Students(models.Model):
 
 class Schools(models.Model):
     name = models.CharField(max_length=20)
+    prefecture = models.ForeignKey(
+        "Prefecture", on_delete=models.CASCADE
+    )
