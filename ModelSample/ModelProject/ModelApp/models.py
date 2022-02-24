@@ -37,7 +37,7 @@ class Students(models.Model):
         "Schools", on_delete=models.CASCADE
     )
 
-    class class Meta:
+    class Meta:
         db_table = 'students'
 
 class Schools(models.Model):
@@ -46,11 +46,11 @@ class Schools(models.Model):
         "Prefecture", on_delete=models.CASCADE
     )
 
-    class class Meta:
+    class Meta:
         db_table = 'schools'
 
 class Prefectures(models.Model):
     name = models.CharField(max_length=20)
 
-    class class Meta:
+    class Meta:
         db_table = 'prefectures'
