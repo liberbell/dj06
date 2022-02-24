@@ -1,3 +1,4 @@
+from os import major
 from django.db import models
 from django.utils import timezone
 import pytz
@@ -29,3 +30,5 @@ class Person(BaseMeta):
 
 class Students(models.Model):
     name = models.CharField(max_length=20)
+    age = models.IntegerField()
+    major = models.CharField(max_length=20)
