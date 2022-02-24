@@ -51,3 +51,6 @@ class Schools(models.Model):
 
 class Prefectures(models.Model):
     name = models.CharField(max_length=20)
+
+    class class Meta:
+        db_table = 'prefectures'
