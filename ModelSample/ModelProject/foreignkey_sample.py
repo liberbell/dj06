@@ -13,5 +13,6 @@ students = ["Alex", "Bob", "Elton", "Eric"]
 
 def insert_records():
     for prefecture_name in prefectures:
-        prefecture = Prefectures
-        name = prefecture_name
+        prefecture = Prefectures(
+            name = prefecture_name
+        )
