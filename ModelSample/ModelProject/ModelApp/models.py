@@ -35,3 +35,9 @@ class Students(models.Model):
     school = models.ForeignKey(
         "Schools", on_delete=models.CASCADE
     )
+
+    class class Meta:
+        db_table = 'students'
+
+class Schools(models.Model):
+    name = models.CharField(max_length=20)
