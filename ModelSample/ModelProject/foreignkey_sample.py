@@ -28,3 +28,5 @@ def insert_records():
                     name=student_name, age=17, major="Science", school=school
                 )
                 student.save()
+
+insert_records()
