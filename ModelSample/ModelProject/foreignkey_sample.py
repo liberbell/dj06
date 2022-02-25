@@ -37,3 +37,4 @@ def select_students():
 
 select_students()
 # Schools.objects.filter(id=1).delete()
+# Prefectures.objects.filter(id=1).delete()
