@@ -43,7 +43,7 @@ class Students(models.Model):
 class Schools(models.Model):
     name = models.CharField(max_length=20)
     prefecture = models.ForeignKey(
-        "Prefectures", on_delete=models.CASCADE
+        "Prefectures", on_delete=models.PROTECT
     )
 
     class Meta:
