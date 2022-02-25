@@ -1,5 +1,4 @@
 from datetime import datetime
-import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ModelProject.settings")
 from django import setup
@@ -23,7 +22,7 @@ def insert_records():
                 prefecture = prefecture
             )
             school.save()
-            for student in students:
+            for student_name in students:
                 student = Students(
-                    name=student_name, age=17, major="Science"
+                    name=student_name, age=17, major="Science", school=school
                 )
