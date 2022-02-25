@@ -34,3 +34,5 @@ def select_students():
     students = Students.objects.all()
     for student in students:
         print(student.id, student.name, student.school.id, student.school.prefecture.id, student.school.prefecture.name)
+
+select_students()
