@@ -35,5 +35,5 @@ def select_students():
     for student in students:
         print(student.id, student.name, student.school.id, student.school.name, student.school.prefecture.id, student.school.prefecture.name)
 
-# select_students()
-Schools.objects.filter(id=1).delete()
+select_students()
+# Schools.objects.filter(id=1).delete()
