@@ -22,3 +22,8 @@ def insert_records():
                 name = school_name
                 prefecture = prefecture
             )
+            school.save()
+            for student in students:
+                student = Students(
+                    name=student_name, age=17, major="Science"
+                )
