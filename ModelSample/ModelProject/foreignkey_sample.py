@@ -29,7 +29,7 @@ def insert_records():
                 )
                 student.save()
 
-# insert_records()
+insert_records()
 def select_students():
     students = Students.objects.all()
     for student in students:
