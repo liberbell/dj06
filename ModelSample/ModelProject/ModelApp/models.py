@@ -1,3 +1,4 @@
+from curses import meta
 from os import major
 from sys import prefix
 from django.db import models
@@ -72,3 +73,6 @@ class Restaurants(models.Model):
         primary_key=True
     )
     name = models.CharField(max_length=50)
+
+    class Meta:
+        db_table = 'restaurants'
