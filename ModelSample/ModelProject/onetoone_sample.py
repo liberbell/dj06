@@ -18,4 +18,5 @@ for place_name, place_address in places:
     p = Places(name=place_name, address=place_address)
     p.save()
     for restaurant_name in restaurants:
-        r = Restaurants(name=restaurant_name)
+        r = Restaurants(place=p, name=restaurant_name)
+        r.save()
