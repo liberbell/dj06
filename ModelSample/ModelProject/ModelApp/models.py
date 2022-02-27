@@ -71,4 +71,4 @@ class Restaurants(models.Model):
         on_delete=models.CASCADE,
         primary_key=True
     )
-    name = models.CharField()
+    name = models.CharField(max_length=50)
