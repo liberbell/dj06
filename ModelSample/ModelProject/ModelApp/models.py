@@ -64,3 +64,6 @@ class Places(models.Model):
 
     class Meta:
         db_table = "places"
+
+class Restaurants(models.Model):
+    place = models.OneToOneField(Places, on_delete=models.CASCADE, primary_key=True)
