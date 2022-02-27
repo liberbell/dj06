@@ -57,3 +57,10 @@ class Prefectures(models.Model):
 
     class Meta:
         db_table = 'prefectures'
+
+class Places(models.Model):
+    name = models.CharField(max_length=50)
+    adress = models.CharField(max_length=80)
+
+    class Meta:
+        db_table = "places"
