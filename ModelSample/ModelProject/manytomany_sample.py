@@ -17,3 +17,11 @@ def insert_books:
     book1.save()
     book2.save()
     book3.save()
+
+def insert_authors:
+    author1 = Authors(name="Authors1")
+    author2 = Authors(name="Authors2")
+    author3 = Authors(name="Authors3")
+    author1.save()
+    author2.save()
+    author3.save()
