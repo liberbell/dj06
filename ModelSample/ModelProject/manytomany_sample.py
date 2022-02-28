@@ -10,7 +10,7 @@ setup()
 
 from ModelApp.models import Books, Authors
 
-def insert_books:
+def insert_books():
     book1 = Books(name="BOOK 1")
     book2 = Books(name="BOOK 2")
     book3 = Books(name="BOOK 3")
@@ -18,7 +18,7 @@ def insert_books:
     book2.save()
     book3.save()
 
-def insert_authors:
+def insert_authors():
     author1 = Authors(name="Authors1")
     author2 = Authors(name="Authors2")
     author3 = Authors(name="Authors3")
