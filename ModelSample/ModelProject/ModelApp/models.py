@@ -1,3 +1,4 @@
+from ast import Str
 from curses import meta
 from os import major
 from sys import prefix
@@ -76,3 +77,13 @@ class Restaurants(models.Model):
 
     class Meta:
         db_table = 'restaurants'
+
+class Authors(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = "authors"
+    
