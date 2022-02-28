@@ -26,5 +26,8 @@ def insert_authors():
     author2.save()
     author3.save()
 
-insert_books()
-insert_authors()
+# insert_books()
+# insert_authors()
+book1 = Books.objects.get(pk=1)
+author1 = Authors.objects.get(pk=1)
+author2 = Authors.objects.get(pk=2)
