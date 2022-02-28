@@ -86,4 +86,13 @@ class Authors(models.Model):
 
     class Meta:
         db_table = "authors"
-    
+
+class Books(models.Model):
+    name = models.CharField(max_length=50)
+    authors = models.ManyToManyField(Authors)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'books'
