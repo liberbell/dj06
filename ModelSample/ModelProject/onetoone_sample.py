@@ -12,7 +12,7 @@ from ModelApp.models import Places, Restaurants
 places = [
     ("West Brompton", "London"), ("Ravello", "Salerno")
 ]
-restaurants = ["Lick N hick N", "Sigilgaida"]
+restaurants = ["LickNhickN", "Sigilgaida"]
 
 for place_name, place_address in places:
     p = Places(name=place_name, address=place_address)
