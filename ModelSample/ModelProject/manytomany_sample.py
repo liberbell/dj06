@@ -25,3 +25,6 @@ def insert_authors:
     author1.save()
     author2.save()
     author3.save()
+
+insert_books()
+insert_authors()
