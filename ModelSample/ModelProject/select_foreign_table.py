@@ -13,3 +13,4 @@ from ModelApp.models import Students, Schools, Prefectures
 s = Schools.objects.first()
 print(type(s))
 print(dir(s))
+print(s.prefecture.name)
