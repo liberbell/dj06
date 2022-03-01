@@ -34,3 +34,5 @@ author2 = Authors.objects.get(pk=2)
 
 # book1.authors.add(author1, author2)
 print(book1.authors.all())
+book3.authors.add(author1)
+book3.authors.add(author2, author3)
