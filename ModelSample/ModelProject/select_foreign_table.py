@@ -14,4 +14,6 @@ s = Schools.objects.first()
 print(type(s))
 print(dir(s))
 print(s.prefecture.name)
-print(s.students_set)
+# print(s.students_set)
+st = s.students_set
+print(type(st))
