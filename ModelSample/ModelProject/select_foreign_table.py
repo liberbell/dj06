@@ -11,4 +11,5 @@ setup()
 from ModelApp.models import Students, Schools, Prefectures
 
 s = Schools.objects.first()
-print(s)
+print(type(s))
+print(dir(s))
