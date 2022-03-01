@@ -22,3 +22,6 @@ from ModelApp.models import Students, Schools, Prefectures
 from ModelApp.models import Places, Restaurants
 p = Places.objects.first()
 print(type(p))
+print(dir(p))
+
+print(p.restaurants.name)
