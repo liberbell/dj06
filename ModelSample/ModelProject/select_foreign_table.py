@@ -31,4 +31,6 @@ from ModelApp.models import Books, Authors
 b = Books.objects.first()
 # print(type(b))
 # print(dir(b))
-print(b.authors.all())
+# print(b.authors.all())
+r = Authors.objects.all()
+print(r.books_set.all())
