@@ -29,6 +29,8 @@ def insert_authors():
 # insert_books()
 # insert_authors()
 book1 = Books.objects.get(pk=1)
+book2 = Books.objects.get(pk=2)
+book3 = Books.objects.get(pk=3)
 author1 = Authors.objects.get(pk=1)
 author2 = Authors.objects.get(pk=2)
 author3 = Authors.objects.get(pk=3)
