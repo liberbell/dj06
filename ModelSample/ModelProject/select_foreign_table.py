@@ -1,5 +1,6 @@
 from datetime import datetime
 from email.headerregistry import Address
+
 from importlib.util import resolve_name
 import os
 from unicodedata import name
@@ -10,10 +11,14 @@ setup()
 
 from ModelApp.models import Students, Schools, Prefectures
 
-s = Schools.objects.first()
-print(type(s))
-print(dir(s))
-print(s.prefecture.name)
+# s = Schools.objects.first()
+# print(type(s))
+# print(dir(s))
+# print(s.prefecture.name)
 # print(s.students_set)
-st = s.students_set
-print(type(st))
+# st = s.students_set
+# print(type(st))
+
+from ModelApp.models import Places, Restaurants
+p = Places.objects.first()
+print(type(p))
