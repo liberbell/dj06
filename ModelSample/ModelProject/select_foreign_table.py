@@ -29,4 +29,6 @@ from ModelApp.models import Students, Schools, Prefectures
 # print(r.place.name)
 from ModelApp.models import Books, Authors
 b = Books.objects.first()
-print(type(b))
+# print(type(b))
+# print(dir(b))
+print(b.authors.all())
