@@ -25,3 +25,5 @@ print(type(p))
 print(dir(p))
 
 print(p.restaurants.name)
+r = Restaurants.objects.first()
+print(r.place.name)
