@@ -9,4 +9,6 @@ from django import setup
 setup()
 
 from ModelApp.models import Students
-print(Students.objects.all())
+# print(Students.objects.all())
+
+print(Students.objects.all()[:5])
