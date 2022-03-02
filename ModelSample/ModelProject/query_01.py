@@ -16,4 +16,7 @@ from ModelApp.models import Students
 
 # print(Students.objects.all()[5:8])
 # print(Students.objects.all()[5:8].query)
-print(Students.objects.first())
+# print(Students.objects.first())
+
+print(Students.objects.filter(name="Bob"))
+print(Students.objects.filter(age=17))
