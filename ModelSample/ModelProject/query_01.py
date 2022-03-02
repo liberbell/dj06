@@ -25,4 +25,5 @@ from ModelApp.models import Students
 # print(Students.objects.filter(name="Bob", pk__lt=20))
 
 print(Students.objects.all())
-print(Students.objects.filter(name__startswith="E"))
+# print(Students.objects.filter(name__startswith="E"))
+print(Students.objects.filter(name__endswith="c"))
