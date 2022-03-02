@@ -24,6 +24,9 @@ from ModelApp.models import Students
 # print(Students.objects.filter(name="Bob", pk__gt=13).query)
 # print(Students.objects.filter(name="Bob", pk__lt=20))
 
-print(Students.objects.all())
+# print(Students.objects.all())
 # print(Students.objects.filter(name__startswith="E"))
-print(Students.objects.filter(name__endswith="c"))
+# print(Students.objects.filter(name__endswith="c"))
+
+from django.db.models import Q
+print(Students.objects.filter(Q(name="Eric") | Q(pk__gt=19)))
