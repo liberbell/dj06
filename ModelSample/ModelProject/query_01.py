@@ -15,3 +15,4 @@ from ModelApp.models import Students
 # print(Students.objects.all()[5:])
 
 print(Students.objects.all()[5:8])
+print(Students.objects.all()[5:8].query)
