@@ -21,5 +21,5 @@ from ModelApp.models import Students
 # print(Students.objects.filter(name="Bob"))
 # print(Students.objects.filter(age=17))
 
-print(Students.objects.filter(name="Bob", pk_gt=13).query)
-print(Students.objects.filter(name="Bob", pk_lt=20))
+print(Students.objects.filter(name="Bob", pk__gt=13).query)
+print(Students.objects.filter(name="Bob", pk__lt=20))
