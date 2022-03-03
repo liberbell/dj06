@@ -12,7 +12,7 @@ from ModelApp.models import Students, Person
 
 # print(Students.objects.all())
 ids = [13, 14, 15]
-print(Students.objects.filter(pk__in=ids))
+# print(Students.objects.filter(pk__in=ids))
 
 # print(Students.objects.filter(name__contains="Er"))
 
@@ -24,3 +24,4 @@ p = Person(
 # p.save()
 
 print(Person.objects.filter(salary__isnull=True))
+print(Person.objects.exclude(salary__isnull=True))
