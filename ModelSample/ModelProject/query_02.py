@@ -28,4 +28,4 @@ p = Person(
 
 # print(Students.objects.exclude(name="Elton"))
 
-print(Students.objects.values("name", "age"))
+print(Students.objects.values("name", "age").filter(pk=14).query)
