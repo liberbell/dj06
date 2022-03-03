@@ -21,4 +21,6 @@ p = Person(
     birthday = "2000-01-01", email="abc@example.com", salary=None, memo="Alex memo",
     web_site = "https://example.com"
 )
-p.save()
+# p.save()
+
+print(Person.objects.filter(salary__isnull))
