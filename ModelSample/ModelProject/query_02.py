@@ -23,4 +23,4 @@ p = Person(
 )
 # p.save()
 
-print(Person.objects.filter(salary__isnull))
+print(Person.objects.filter(salary__isnull=True))
