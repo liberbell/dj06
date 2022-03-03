@@ -17,3 +17,4 @@ from django.db.models import Count, Max, Min, Avg, Sum
 print(Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age")))
 
 aggregate_student = Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age"))
+print(aggregate_student["pk__max"])
