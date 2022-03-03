@@ -14,4 +14,11 @@ from ModelApp.models import Students, Person
 ids = [13, 14, 15]
 print(Students.objects.filter(pk__in=ids))
 
-print(Students.objects.filter(name__contains="Er"))
+# print(Students.objects.filter(name__contains="Er"))
+
+p = Person(
+    first_name = "Alex", last_name = "Hepp",
+    birthday = "2000-01-01", email="abc@example.com", salary=None, memo="Alex memo",
+    Web_site = "https://example.com"
+)
+p.save()
