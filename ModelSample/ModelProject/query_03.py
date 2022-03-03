@@ -11,4 +11,7 @@ setup()
 from ModelApp.models import Students
 
 # print(Students.objects.all())
-print(Students.objects.filter(name="Eric"))
+# print(Students.objects.filter(name="Eric").count())
+
+from django.db.models import Count, Max, Min, Avg, Sum
+print(Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("pk")))
