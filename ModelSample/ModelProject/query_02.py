@@ -19,6 +19,6 @@ print(Students.objects.filter(pk__in=ids))
 p = Person(
     first_name = "Alex", last_name = "Hepp",
     birthday = "2000-01-01", email="abc@example.com", salary=None, memo="Alex memo",
-    Web_site = "https://example.com"
+    web_site = "https://example.com"
 )
 p.save()
