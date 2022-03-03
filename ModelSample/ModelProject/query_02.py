@@ -29,6 +29,8 @@ p = Person(
 # print(Students.objects.exclude(name="Elton"))
 
 # print(Students.objects.values("name", "age").filter(pk=14).query)
-students = Students.objects.values("id", "name", "age")
-for student in students:
-    print(student["id"], student["name"])
+# students = Students.objects.values("id", "name", "age")
+# for student in students:
+#     print(student["id"], student["name"])
+
+print(Students.objects.order_by("-name"))
