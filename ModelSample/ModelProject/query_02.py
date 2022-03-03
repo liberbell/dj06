@@ -13,3 +13,5 @@ from ModelApp.models import Students, Person
 # print(Students.objects.all())
 ids = [13, 14, 15]
 print(Students.objects.filter(pk__in=ids))
+
+print(Students.objects.filter(name__contains="Er"))
