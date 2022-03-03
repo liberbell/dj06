@@ -23,5 +23,9 @@ p = Person(
 )
 # p.save()
 
-print(Person.objects.filter(salary__isnull=True))
-print(Person.objects.exclude(salary__isnull=True))
+# print(Person.objects.filter(salary__isnull=True))
+# print(Person.objects.exclude(salary__isnull=True))
+
+# print(Students.objects.exclude(name="Elton"))
+
+print(Students.objects.values("name", "age"))
