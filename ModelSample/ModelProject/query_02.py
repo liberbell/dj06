@@ -33,4 +33,4 @@ p = Person(
 # for student in students:
 #     print(student["id"], student["name"])
 
-print(Students.objects.order_by("-name"))
+print(Students.objects.order_by("-name", "id"))
