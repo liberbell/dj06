@@ -10,4 +10,5 @@ setup()
 
 from ModelApp.models import Students
 
-print(Students.object.all())
+# print(Students.objects.all())
+print(Students.objects.filter(name="Eric"))
