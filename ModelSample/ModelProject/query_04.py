@@ -20,5 +20,8 @@ from ModelApp.models import Students, Schools
 
 # print(Students.objects.filter(school__name="North side School").query)
 
-for student in Students.objects.order_by("school__name"):
-    print(student.name, student.school.name)
+# for student in Students.objects.order_by("school__name"):
+#     print(student.name, student.school.name)
+
+from django.db.models import Count, Max, Sum
+print(Students.objects.values("school__name").annotate(Count("id"), Max("id"), Sum("id")))
