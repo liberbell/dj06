@@ -14,9 +14,13 @@ from ModelApp.models import Students
 # print(Students.objects.filter(name="Eric").count())
 
 from django.db.models import Count, Max, Min, Avg, Sum
-print(Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age")))
+# print(Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age")))
 
-aggregate_student = Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age"))
-print(aggregate_student["pk__max"])
+# aggregate_student = Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age"))
+# print(aggregate_student["pk__max"])
 
-print(Students.objects.aggregate(pk_count=Count("pk"), max_pk=Max("pk"), min_pk=Min("pk"), avarage=Avg("pk"), sum=Sum("age")))
+# print(Students.objects.aggregate(pk_count=Count("pk"), max_pk=Max("pk"), min_pk=Min("pk"), avarage=Avg("pk"), sum=Sum("age")))
+
+print(Students.objects.values("name").annotate(
+    Max("pk"), Min("pk")
+))
