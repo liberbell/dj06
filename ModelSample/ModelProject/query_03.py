@@ -18,3 +18,5 @@ print(Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), S
 
 aggregate_student = Students.objects.aggregate(Count("pk"), Max("pk"), Min("pk"), Avg("pk"), Sum("age"))
 print(aggregate_student["pk__max"])
+
+print(Students.objects.aggregate(pk_count=Count("pk"), max_pk=Max("pk"), min_pk=Min("pk"), avarage=Avg("pk"), sum=Sum("age")))
