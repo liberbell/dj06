@@ -15,5 +15,7 @@ from ModelApp.models import Students, Schools
 # for student in Students.objects.filter(school__name="East side School"):
 #     print(student.name, student.school.name, student.school.prefecture.name)
 
-for student in Students.objects.exclude(school__name="North side School"):
-    print(student.name, student.school.name, student.school.prefecture.name)
+# for student in Students.objects.exclude(school__name="North side School"):
+#     print(student.name, student.school.name, student.school.prefecture.name)
+
+print(Students.objects.filter(school__name="North side School").query)
