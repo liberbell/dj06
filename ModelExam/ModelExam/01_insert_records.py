@@ -26,7 +26,7 @@ for class_name in class_names:
     )
     insert_class.save()
     for student_name in student_names:
-        name = class_name + " " + student_names
+        name = class_name + " " + student_name
         student = Students(
             name=name,
             class_fk = insert_class
