@@ -19,3 +19,11 @@ for test_name in test_names:
     )
     test.save()
     inserterd_tests.append(test)
+
+for class_name in class_names:
+    insert_class = Classes(
+        name=class_name
+    )
+    insert_class.save()
+    for student_name in student_names:
+        name = class_name + " " + student_names
