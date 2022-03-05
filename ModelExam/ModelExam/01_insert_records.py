@@ -34,8 +34,10 @@ for class_name in class_names:
         )
         student.save()
         for inserted_test in inserterd_tests:
-            test_result TestResults(
+            test_result = TestResults(
                 student = student,
                 test = inserted_test,
                 score = randint(50, 100)
             )
+            test_result.save()
+            
