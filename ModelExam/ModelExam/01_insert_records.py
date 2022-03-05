@@ -29,7 +29,7 @@ for class_name in class_names:
         name = class_name + " " + student_name
         student = Students(
             name=name,
-            class_fk = insert_class
+            class_fk = insert_class,
             grade=1
         )
         student.save()
