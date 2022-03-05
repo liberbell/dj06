@@ -10,4 +10,12 @@ from random import randint
 class_names = ["Class" + c_name for c_name in "ABCDEFGHIJ"]
 # print(class_names)
 student_names = ["Student" + s_name for s_name in "ABCDEFGHIJ"]
-test_name = ["Math", "Language", "Science"]
+test_names = ["Math", "Language", "Science"]
+
+inserterd_tests = []
+for test_name in test_names:
+    test = Tests(
+        name = test_name
+    )
+    test.save()
+    inserterd_tests.append(test)
