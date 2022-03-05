@@ -7,3 +7,6 @@ class Classes(models.Model):
 
     class Meta:
         db_table = 'classes'
+class Students(models.Model):
+    name =models.CharField(max_length=50)
+    grade = models.IntegerField()ß
