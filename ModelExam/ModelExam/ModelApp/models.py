@@ -9,4 +9,8 @@ class Classes(models.Model):
         db_table = 'classes'
 class Students(models.Model):
     name =models.CharField(max_length=50)
-    grade = models.IntegerField()ß
+    grade = models.IntegerField()
+    class_fk = models.ForeignKey(
+        "Classes",
+        on_delete=models.CASCADE
+    )
