@@ -27,3 +27,15 @@ for class_name in class_names:
     insert_class.save()
     for student_name in student_names:
         name = class_name + " " + student_names
+        student = Students(
+            name=name,
+            class_fk = insert_class
+            grade=1
+        )
+        student.save()
+        for inserted_test in inserterd_tests:
+            test_result TestResults(
+                student = student,
+                test = inserted_test,
+                score = randint(50, 100)
+            )
