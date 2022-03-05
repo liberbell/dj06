@@ -1,3 +1,4 @@
+from tkinter import CASCADE
 from django.db import models
 
 # Create your models here.
@@ -30,3 +31,10 @@ class TestResults(models.Model):
         "Students",
         on_delete=models.CASCADE
     )
+    test = models.ForeignKey(
+        "Tests",
+        on_delete=models.CASCADE
+    )
+
+    class Meta:
+        db_table = 'test_results'
