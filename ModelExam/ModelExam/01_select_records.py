@@ -13,10 +13,10 @@ student = Students.objects.get(pk=1)
 from django.db.models import Sum, Avg, Max, Min
 
 for class_summary in Classes.objects.values("name", "students__testresults__test__name").annotate(
-    max_socre = Max("students__testresults__score"),
-    min_socre = Min("students__testresults__score"),
-    avg_socre = Avg("students__testresults__score"),
-    sum_socre = Sum("students__testresults__score"),
+    max_score = Max("students__testresults__score"),
+    min_score = Min("students__testresults__score"),
+    avg_score = Avg("students__testresults__score"),
+    sum_score = Sum("students__testresults__score"),
 ):
     print(
         class_summary["name"],
