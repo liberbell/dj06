@@ -4,11 +4,11 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ModelExam.settings")
 from django import setup
 setup()
 
-from ModelApp.models import Students
+from ModelApp.models import Students, Classes
 
 student = Students.objects.get(pk=1)
-for test_result in student.testresults_set.all():
-    print(student.class_fk.name, student.name, test_result.test.name, test_result.score)
+# for test_result in student.testresults_set.all():
+#     print(student.class_fk.name, student.name, test_result.test.name, test_result.score)
 
 from django.db.models import Sum, Avg, Max, Min
 
