@@ -3,4 +3,10 @@ from . import forms
 
 # Create your views here.
 def index(request):
-    return render(request, "index.html")
+    return render(request, "formapp/index.html")
+
+def form_page(request):
+    form = forms.UserInfo()
+    return render(request, "formapp/request.html", context={
+        "form": form
+    })
