@@ -6,4 +6,6 @@ setup()
 
 from ModelApp.models import Students
 
-Student = Students.objects.get(pk=1)
+student = Students.objects.get(pk=1)
+for test_result in student.testresults_set.all():
+    print(Students.class_fk.name, student.name, test_result.test.name, test_result.score)
