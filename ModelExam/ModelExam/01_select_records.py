@@ -18,3 +18,7 @@ for class_summary in Classes.object.values("name", "students__testresults__test_
     avg_socre = Avg("students__testresults__score"),
     sum_socre = Sum("students__testresults__score"),
 ):
+    print(
+        class_summary["name"],
+        class_summary["students__testresults__test__name"]
+    )
