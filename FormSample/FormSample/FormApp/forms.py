@@ -11,13 +11,13 @@ class UserInfo(forms.Form):
         (1, "Permanent"),
         (2, "Temporary"),
         (3, "Student"),
-        (4, "No job")
-    ))
+        (4, "No job"),
+    ), widget=forms.RadioSelect)
     hoby = forms.MultipleChoiceField(choices=(
         (1, "Sports"),
         (2, "Reading"),
         (3, "Watch movies"),
         (4, "other")
-    ))
+    ), widget=forms.CheckboxSelectMultiple)
     homepage = forms.URLField(required=False)
     memo = forms.CharField(required=False, widget=forms.Textarea)
