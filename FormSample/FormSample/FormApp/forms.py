@@ -19,4 +19,4 @@ class UserInfo(forms.Form):
         (3, "Watch movies"),
         (4, "other")
     ))
-    homepage = forms.URLField()
+    homepage = forms.URLField(required=False)
