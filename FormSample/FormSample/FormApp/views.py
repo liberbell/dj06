@@ -7,6 +7,8 @@ def index(request):
 
 def form_page(request):
     form = forms.UserInfo()
-    return render(request, "formapp/request.html", context={
-        "form": form
-    })
+    return render(
+        request,
+        "formapp/form_page.html",
+        context={"form": form }
+    )
