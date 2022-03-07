@@ -1,9 +1,9 @@
 from django import forms
 
 class UserInfo(forms.Form):
-    name = forms.CharField()
-    age = forms.IntegerField()
-    mail = forms.EmailField()
+    name = forms.CharField(label="Full Name")
+    age = forms.IntegerField(label="Own age")
+    mail = forms.EmailField(label="Mail address")
     is_married = forms.BooleanField()
     birthday = forms.DateField()
     salary = forms.DecimalField()
