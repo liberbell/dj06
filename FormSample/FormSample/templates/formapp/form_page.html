@@ -5,8 +5,11 @@
         <title>Form</title>
     </head>
     <body>
-        <table>
-            {{ form.as_table }}
-        </table>
+        <form method="POST">
+            <table>
+                {{ form.as_table }}
+                <input type="Submit" value="send">
+            </table>
+        </form>
     </body>
 </html>
