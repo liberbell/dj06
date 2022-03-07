@@ -13,3 +13,10 @@ class UserInfo(forms.Form):
         (3, "Student"),
         (4, "No job")
     ))
+    hoby = forms.MultipleChoiceField(choices=(
+        (1, "Sports"),
+        (2, "Reading"),
+        (3, "Watch movies"),
+        (4, "other")
+    ))
+    homepage = forms.URLField()
