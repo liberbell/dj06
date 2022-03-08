@@ -6,3 +6,11 @@
 label[for="id_mail"]{
     color: red;
 }
+
+#id_job{
+    list-style: none;
+}
+
+.hobbies_class{
+    list-style: none;
+}
