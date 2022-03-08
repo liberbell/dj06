@@ -8,7 +8,7 @@ class UserInfo(forms.Form):
         label="Mail address",
         widget=forms.TextInput(attrs={"class": "mail-class", "placeholder": "sample@example.com"}),
     )
-    is_married = forms.BooleanField(initial=False)
+    is_married = forms.BooleanField(initial=False, required=False)
     birthday = forms.DateField(initial="1990-01-01")
     salary = forms.DecimalField()
     job = forms.ChoiceField(choices=(
