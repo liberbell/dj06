@@ -27,6 +27,6 @@ class UserInfo(forms.Form):
     memo = forms.CharField(required=False, widget=forms.Textarea)
 
     def __init__(self, *args, **kwargs):
-        super(UserInfo, self).__init__(*args, **args)
+        super(UserInfo, self).__init__(*args, **kwargs)
         self.fields["job"].widget.attrs["id"] = "id_job"
         self.fields["hobby"].widget.attrs["class"] = "hobbies"
