@@ -25,3 +25,6 @@ class UserInfo(forms.Form):
     ), widget=forms.CheckboxSelectMultiple)
     homepage = forms.URLField(required=False)
     memo = forms.CharField(required=False, widget=forms.Textarea)
+
+    def __init__(self, *args, **kwargs):
+        super(UserInfo, self).__init__(*args, **args)
