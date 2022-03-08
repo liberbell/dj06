@@ -2,3 +2,7 @@
     width: 70%;
     color: blue;
 }
+
+label[for="id_mail"]{
+    color: red;
+}
