@@ -17,7 +17,7 @@ class UserInfo(forms.Form):
         (3, "Student"),
         (4, "No job"),
     ), widget=forms.RadioSelect)
-    hoby = forms.MultipleChoiceField(choices=(
+    hobbies = forms.MultipleChoiceField(choices=(
         (1, "Sports"),
         (2, "Reading"),
         (3, "Watch movies"),
@@ -29,4 +29,4 @@ class UserInfo(forms.Form):
     def __init__(self, *args, **kwargs):
         super(UserInfo, self).__init__(*args, **kwargs)
         self.fields["job"].widget.attrs["id"] = "id_job"
-        self.fields["hobby"].widget.attrs["class"] = "hobbies"
+        self.fields["hobbies"].widget.attrs["class"] = "hobbies"
