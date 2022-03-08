@@ -28,3 +28,5 @@ class UserInfo(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(UserInfo, self).__init__(*args, **args)
+        self.fields["job"].widget.attrs["id"] = "id_job"
+        self.fields["hobby"].widget.attrs["class"] = "hobbies"
