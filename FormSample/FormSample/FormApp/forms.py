@@ -32,6 +32,6 @@ class UserInfo(forms.Form):
         self.fields["hobbies"].widget.attrs["class"] = "hobbies_class"
 
     def clean_homepage(self):
-        homepage = self.cleaned_data
+        homepage = self.cleaned_data["homepage"]
         if not homepage.startwith("https"):
             raise forms.ValidationError("Needs https")
