@@ -2,7 +2,7 @@ from logging import PlaceHolder
 from django import forms
 
 class UserInfo(forms.Form):
-    name = forms.CharField(label="Full Name", max_length=10)
+    name = forms.CharField(label="Full Name", max_length=10, min_length=3)
     age = forms.IntegerField(label="Own age")
     mail = forms.EmailField(label="Mail address", widget=forms.TextInput(attrs={"placeholder": "sample@example.com"}))
     is_married = forms.BooleanField(initial=False)
