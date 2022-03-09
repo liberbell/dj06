@@ -51,4 +51,4 @@ class UserInfo(forms.Form):
         mail = cleaned_data["mail"]
         verify_mail = cleaned_data["verify_mail"]
         if mail != verify_mail:
-            raise forms.ValidationError("not mutch email")
+            raise forms.ValidationError("not match email")
