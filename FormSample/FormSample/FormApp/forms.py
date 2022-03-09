@@ -8,7 +8,7 @@ def check_name(value):
         raise validators.ValidationError("Cant regist the name.")
 
 class UserInfo(forms.Form):
-    name = forms.CharField(label="Full Name", max_length=10, min_length=3)
+    name = forms.CharField(label="Full Name", max_length=10, min_length=3, validators=[check_name])
     age = forms.IntegerField(label="Own age", validators=[validators.MinValueValidator(15, message="input over 15")])
     mail = forms.EmailField(
         label="Mail address",
