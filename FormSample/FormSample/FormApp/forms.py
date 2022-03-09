@@ -1,3 +1,4 @@
+from dataclasses import fields
 from logging import PlaceHolder
 from wsgiref.validate import validator
 from django import forms
@@ -56,7 +57,5 @@ class UserInfo(forms.Form):
 
 class PostModelForm(forms.ModelForm):
     class Meta:
-        db_table = ''
-        managed = True
-        verbose_name = 'ModelName'
-        verbose_name_plural = 'ModelNames'
+        model = Post
+        fields = '__all__'
