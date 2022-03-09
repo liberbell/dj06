@@ -14,6 +14,10 @@ class UserInfo(forms.Form):
         label="Mail address",
         widget=forms.TextInput(attrs={"class": "mail-class", "placeholder": "sample@example.com"}),
     )
+    verify_mail = forms.EmailField(
+        label="Verify Mail address",
+        widget=forms.TextInput(attrs={"class": "mail-class", "placeholder": "sample@example.com"})
+    )
     is_married = forms.BooleanField(initial=False, required=False)
     birthday = forms.DateField(initial="1990-01-01")
     salary = forms.DecimalField()
@@ -46,3 +50,5 @@ class UserInfo(forms.Form):
         cleaned_data = super().clean()
         mail = cleaned_data["mail"]
         verify_mail = cleaned_data["verify_mail"]
+        if mail != verify_mail:
+            raise forms.ValidationError("not mutch email")
