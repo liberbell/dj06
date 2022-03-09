@@ -41,3 +41,8 @@ class UserInfo(forms.Form):
         homepage = self.cleaned_data["homepage"]
         if not homepage.startswith("https"):
             raise forms.ValidationError("Needs https")
+
+    def clean(self):
+        cleaned_data = super().clean()
+        mail = cleaned_data["mail"]
+        verify_mail = cleaned_data["verify_mail"]
