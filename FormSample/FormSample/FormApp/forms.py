@@ -59,4 +59,5 @@ class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
         # fields = '__all__'
-        fields =["name", "title"]
+        # fields =["name", "title"]
+        exclude = ["title"]
