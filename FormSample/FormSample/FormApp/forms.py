@@ -56,6 +56,9 @@ class UserInfo(forms.Form):
             raise forms.ValidationError("not match email")
 
 class PostModelForm(forms.ModelForm):
+    memo = forms.CharField(
+        widget=forms.Textarea(attrs={"rows":30, "cols":20})
+    )
     class Meta:
         model = Post
         # fields = '__all__'
