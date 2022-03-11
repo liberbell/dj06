@@ -55,6 +55,10 @@ class UserInfo(forms.Form):
         if mail != verify_mail:
             raise forms.ValidationError("not match email")
 
+class BaseForm(forms.ModelForm):
+    def save(self, *args, **kwargs):
+        print(f'Form: {self.__class__.__name__} execute!')
+
 class PostModelForm(forms.ModelForm):
     memo = forms.CharField(
         widget=forms.Textarea(attrs={"rows":30, "cols":20})
