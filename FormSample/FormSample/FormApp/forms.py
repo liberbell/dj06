@@ -58,8 +58,9 @@ class UserInfo(forms.Form):
 class BaseForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         print(f'Form: {self.__class__.__name__} execute!')
+        return super(BaseForm, self).save(*args, **kwargs)
 
-class PostModelForm(forms.ModelForm):
+class PostModelForm(BaseForm):
     memo = forms.CharField(
         widget=forms.Textarea(attrs={"rows":30, "cols":20})
     )
