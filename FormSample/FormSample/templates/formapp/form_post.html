@@ -10,7 +10,7 @@
         <form method="POST">
             {% csrf_token %}
             <table>
-                {{ form.name.label }}: {{ form.name }}
+                <div style="color:red;">{{ form.name.label }}: {{ form.name }}</div>
             </table>
             <input type="Submit" value="send">
         </form>
