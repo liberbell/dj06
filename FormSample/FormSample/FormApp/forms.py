@@ -61,6 +61,9 @@ class PostModelForm(forms.ModelForm):
     )
     class Meta:
         model = Post
-        # fields = '__all__'
+        fields = '__all__'
         # fields =["name", "title"]
-        exclude = ["title"]
+        # exclude = ["title"]
+    
+    def save(self, *args, **kwargs):
+        obj = super(PostModelForm, self).save(commit=False, *args, **kwargs)
