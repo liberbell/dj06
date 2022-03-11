@@ -11,7 +11,9 @@
             {% csrf_token %}
             <table>
                 {{ form.name.label }}: {{ form.name }}
-                {{ form.name.errors }}
+                {% if form.name.errors %}
+                    <div style="color:red;">{{ form.name.errors }}</div>
+                {% endif %}
             </table>
             <input type="Submit" value="send">
         </form>
