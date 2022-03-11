@@ -18,6 +18,10 @@
                 {% if form.title.errors %}
                     <div style="color:red;">{{ form.title.errors.as_text }}</div>
                 {% endif %}
+                {{ form.memo.label }}: {{ form.memo }}
+                {% if form.memo.errors %}
+                    <div style="color:red;">{{ form.memo.errors.as_text }}</div>
+                {% endif %}
             </table>
             <input type="Submit" value="send">
         </form>
