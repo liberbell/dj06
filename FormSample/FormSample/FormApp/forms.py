@@ -1,6 +1,7 @@
 from dataclasses import fields
 from logging import PlaceHolder
 from wsgiref.validate import validator
+from xml.dom import ValidationErr
 from django import forms
 from django.core import validators
 from .models import Post
@@ -80,3 +81,8 @@ class PostModelForm(BaseForm):
         print("Save obj.")
         obj.save()
         return obj
+
+    def clean_name(self):
+        name = self.cleaned_data.get("name")
+        if name == "aaaaa":
+            raise validators.ValidationError("Invalid name")
