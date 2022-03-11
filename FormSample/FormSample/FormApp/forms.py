@@ -64,6 +64,7 @@ class PostModelForm(BaseForm):
     name = forms.CharField(label="name")
     title = forms.CharField(label="title")
     memo = forms.CharField(
+        label="memo",
         widget=forms.Textarea(attrs={"rows":30, "cols":20})
     )
     class Meta:
