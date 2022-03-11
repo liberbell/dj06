@@ -69,5 +69,6 @@ class PostModelForm(forms.ModelForm):
         obj = super(PostModelForm, self).save(commit=False, *args, **kwargs)
         obj.name = obj.name.upper()
         print(type(obj))
+        print("Save obj.")
         obj.save()
-        return obj.
+        return obj
