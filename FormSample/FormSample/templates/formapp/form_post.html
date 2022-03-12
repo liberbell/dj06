@@ -11,7 +11,7 @@
             {% csrf_token %}
             {% if form.errors %}
                 {% for key, values in form.errors.items %}
-                    <p>{{ key }}: {{ value.as_text }}</p>
+                    <p>{{ key }}: {{ values.as_text }}</p>
                 {% endfor %}
             {% endif %}
             <table>
