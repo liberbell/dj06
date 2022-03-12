@@ -93,3 +93,6 @@ class PostModelForm(BaseForm):
         if title == "aaaaa":
             raise validators.ValidationError("Invalid title")
         return title
+
+    def clean(self):
+        cleaned_data = super().clean()
