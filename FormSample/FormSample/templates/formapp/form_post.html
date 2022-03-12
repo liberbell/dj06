@@ -12,7 +12,7 @@
             {{ form.non_field_errors }}
             {% if form.errors %}
                 {% for key, values in form.errors.items %}
-                    {% if != "__all__" %}
+                    {% if key != "__all__" %}
                         <p>{{ key }}: {{ values.as_text }}</p>
                     {% endif %}
                 {% endfor %}
