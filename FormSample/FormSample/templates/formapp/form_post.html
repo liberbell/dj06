@@ -9,6 +9,11 @@
     <body>
         <form method="POST">
             {% csrf_token %}
+            {% if form.errors %}
+                {% for key, values in form.errors.items %}
+                    <p>{{ key }}: {{ value.as_text }}</p>
+                {% endfor %}
+            {% endif %}
             <table>
                 {{ form.name.label }}: {{ form.name }}
                 {% if form.name.errors %}
