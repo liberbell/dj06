@@ -87,3 +87,9 @@ class PostModelForm(BaseForm):
         if name == "aaaaa":
             raise validators.ValidationError("Invalid name")
         return name
+
+    def clean_title(self):
+        title = self.cleaned_data.get("title")
+        if title == "aaaaa":
+            raise validators.ValidationError("Invalid title")
+        return title
