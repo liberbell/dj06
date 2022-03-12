@@ -96,3 +96,5 @@ class PostModelForm(BaseForm):
 
     def clean(self):
         cleaned_data = super().clean()
+        title = cleaned_data.get("title")
+        is_exist = Post.objects.filter(title=title).first()
