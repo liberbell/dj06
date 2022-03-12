@@ -98,3 +98,5 @@ class PostModelForm(BaseForm):
         cleaned_data = super().clean()
         title = cleaned_data.get("title")
         is_exist = Post.objects.filter(title=title).first()
+        if is_exist:
+            raise validators.ValidationError("The title is exist already.")
