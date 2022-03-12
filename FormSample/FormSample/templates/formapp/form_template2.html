@@ -4,8 +4,10 @@
         <table>
             {{ form.as_table }}
         </table>
+    {% elif as_ul %}
+        {{ form.as_ul }}
+    {% else %}
+        {{ form.as_p }}
     {% endif %}
-    {{ form.as_p }}
- 
     <input type="Submit" value="send">
 </form>
