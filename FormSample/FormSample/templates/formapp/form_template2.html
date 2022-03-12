@@ -1,5 +1,10 @@
 <form method="POST">
     {% csrf_token %}
+    {% if as_table %}
+        <table>
+            {{ form.as_table }}
+        </table>
+    {% endif %}
     {{ form.as_p }}
  
     <input type="Submit" value="send">
