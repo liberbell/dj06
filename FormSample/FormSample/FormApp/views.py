@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from . import forms
 from django.forms import formset_factory
@@ -32,4 +33,8 @@ def form_post(request):
     )
 
 def fome_set_post(request):
-    TestFormset = formset_factory()
+    TestFormset = formset_factory(forms.FormSetPost)
+    formset = TestFormset(
+        request, "formapp/form_set_post.html",
+        context = {"formset": formset}
+    )
