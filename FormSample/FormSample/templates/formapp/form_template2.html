@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="{% if method %}{{ method }}{% else %}POST{% endif %}">
     {% csrf_token %}
     {% if as_table %}
         <table>
