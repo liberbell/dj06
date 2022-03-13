@@ -9,6 +9,7 @@
     <body>
         <form method="POST">
             {% csrf_token %}
+            {{ formset.as_p }}
         </form>
     </body>
 </html>
