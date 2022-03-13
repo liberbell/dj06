@@ -101,6 +101,6 @@ class PostModelForm(BaseForm):
         if is_exist:
             raise validators.ValidationError("The title is exist already.")
 
-class Form_Set_Post(forms.Form):
+class FormSetPost(forms.Form):
     title = forms.CharField(label="title")
     memo = forms.CharField(label="memo")
