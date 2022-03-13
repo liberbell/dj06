@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . import forms
+from django.forms import formset_factory
 
 # Create your views here.
 def index(request):
@@ -29,3 +30,6 @@ def form_post(request):
         request, "formapp/form_post.html",
         context={"form": form }
     )
+
+def fome_set_post(request):
+    TestFormset = formset_factory()
