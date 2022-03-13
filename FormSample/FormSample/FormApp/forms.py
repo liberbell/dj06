@@ -100,3 +100,7 @@ class PostModelForm(BaseForm):
         is_exist = Post.objects.filter(title=title).first()
         if is_exist:
             raise validators.ValidationError("The title is exist already.")
+
+class Form_Set_Post(forms.Form):
+    title = forms.CharField(label="title")
+    memo = forms.CharField(label="memo")
