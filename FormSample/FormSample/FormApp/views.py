@@ -34,7 +34,7 @@ def form_post(request):
 
 def form_set_post(request):
     TestFormset = formset_factory(forms.FormSetPost, extra=3)
-    formset = TestFormset()
+    formset = TestFormset(request.POST or None)
     return render(
         request, 'formapp/form_set_post.html',
         context = {'formset': formset}
