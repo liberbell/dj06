@@ -65,3 +65,7 @@ def upload_sample(request):
         file_path = os.path.join("upload", upload_file.name)
         file = fs.save(file_path. upload_file)
         uploaded_file_url = fs.url(file)
+        return render(request, "formapp/upload_file.html",
+                    context={
+                        "uploaded_file_url": uploaded_file_url
+                    })
