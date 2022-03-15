@@ -55,3 +55,6 @@ def modelform_set_post(request):
         "formapp/modelform_set_post.html",
         context={'formset': formset}
     )
+
+def upload_sample(request):
+    if request.method == "POST" and request.FILES["upload_file"]
