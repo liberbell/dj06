@@ -10,5 +10,8 @@
             <input type="file" name="upload_file"><br>
             <input type="submit" value="Save">
         </form>
+        {% if uploaded_file_url %}
+            <p>Save Path: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+        {% endif %}
     </body>
 </html>
