@@ -4,7 +4,7 @@ from wsgiref.validate import validator
 from xml.dom import ValidationErr
 from django import forms
 from django.core import validators
-from .models import Post
+from .models import Post, ModelSetPost
 
 def check_name(value):
     if value == "abcde":
@@ -108,3 +108,7 @@ class FormSetPost(forms.Form):
 class ModelFormSetPost(forms.ModelForm):
     title = forms.CharField(label="title")
     memo = forms.CharField(label="memo")
+
+    class Meta:
+        model = ModelSetPost
+        fields = "__all__"
