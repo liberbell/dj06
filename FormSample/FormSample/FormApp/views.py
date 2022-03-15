@@ -45,6 +45,7 @@ def form_set_post(request):
     )
 
 def modelform_set_post(request):
+    # TestFormSet = modelformset_factory(ModelSetPost, fields='__all__', extra=3)
     TestFormSet = modelformset_factory(ModelSetPost, fields='__all__', extra=3)
     formset = TestFormSet(request.POST or None)
     if formset.is_valid():
