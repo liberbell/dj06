@@ -72,6 +72,7 @@ def upload_model_form(request):
     if request.method == "POST":
         form = forms.UserForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            user = form.save()
     else:
-        form = forms.UserForm
+        form = forms.UserForm()
+    return render(request, "formapp/upload_model_form.html", )
