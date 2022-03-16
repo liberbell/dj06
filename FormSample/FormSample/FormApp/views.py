@@ -67,3 +67,11 @@ def upload_sample(request):
         uploaded_file_url = fs.url(file)
         return render(request, "formapp/upload_file.html", context={'uploaded_file_url': uploaded_file_url})
     return render(request, "formapp/upload_file.html")
+
+def upload_model_form(request):
+    if request.method == "POST":
+        form = forms.UserForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = forms.UserForm
