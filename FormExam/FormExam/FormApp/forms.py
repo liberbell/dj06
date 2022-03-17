@@ -2,7 +2,7 @@ from dataclasses import fields
 from .models import Students
 from django import forms
 
-class StudentsInsert(forms.ModelForm):
+class StudentsInsertForm(forms.ModelForm):
     name = forms.CharField(label="name")
     age = forms.IntegerField(label="age")
     grade = forms.IntegerField(label="grade")
