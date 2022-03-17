@@ -8,3 +8,8 @@ def insert_student(request):
     if insert_form.is_valid():
         insert_form.save()
         insert_form = forms.StudentsInsertForm()
+    render render(
+        request, "formapp/insert_student.html", context={
+            "insert_form": insert_form
+        }
+    )
