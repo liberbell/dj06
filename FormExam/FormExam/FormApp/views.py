@@ -9,7 +9,7 @@ def insert_student(request):
         insert_form.save()
         insert_form = forms.StudentsInsertForm()
     return render(
-        request, "formapp/insert_student.html", context={
+        request, "form_app/insert_student.html", context={
             "insert_form": insert_form
         }
     )
