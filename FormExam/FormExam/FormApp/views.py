@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from . import forms
+from models import Students
 
 # Create your views here.
 
@@ -13,3 +14,6 @@ def insert_student(request):
             'insert_form': insert_form
         }
     )
+
+def students_list(request):
+    students = Students.objects.all()
