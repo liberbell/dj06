@@ -10,3 +10,9 @@ class StudentInsertForm(forms.ModelForm):
     class Meta:
         model = Students
         fields = "__all__"
+
+class StudentUpdateForm(forms.Form):
+    name = forms.CharField(label="name")
+    age = forms.IntegerField(label="age")
+    grade = forms.IntegerField(label="grade")
+    picture = forms.FileField(label="file_upload")
