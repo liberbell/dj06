@@ -1,13 +1,14 @@
 {% extends 'form_app/base.html' %}
 
 {% block title %}
-Insert Member{{ block.super }}
+Member update{{ block.super }}
 {% endblock title %}
 
 {% block content %}
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ insert_form.as_p }}
-    <input type="submit" value="Add Member">
+    {{ update_form.as_p }}
+    <input type="submit" value="Member update">
+    <p><img src="{{ student.picture.url }}"></p>
 </form>
 {% endblock content %}
