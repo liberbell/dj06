@@ -17,6 +17,7 @@ def insert_student(request):
 
 def students_list(request):
     students = Students.objects.all()
-    return render(request, "form_app/student_list.html", context={
+    return render(
+        request, "form_app/students_list.html", context={
         "students": students
     })
