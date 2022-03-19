@@ -21,3 +21,11 @@ def students_list(request):
         request, "form_app/students_list.html", context={
         "students": students
     })
+
+def update_student(request, id):
+    student = Students.objects.get(id=id)
+    update_form = forms.StudentUpdateForm(
+        initial= {
+            "name": student.name, "age": student.age, "grade": student.grade
+        }
+    )
