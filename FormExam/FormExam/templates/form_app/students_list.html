@@ -11,5 +11,12 @@ Students List
         <th>Age: </th>
         <th>Grade: </th>
     </tr>
+    {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            <td>{{ student.grade }}</td>
+        </tr>
+    {% endfor %}
 </table>
 {% endblock content %}
