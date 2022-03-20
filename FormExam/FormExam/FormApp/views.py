@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from . import forms
 from .models import Students
+from django.core.files.storage import FileSystemStorage
+import os
 
 # Create your views here.
 
@@ -36,6 +38,8 @@ def update_student(request, id):
             student.age = update_form.cleaned_data["age"]
             student.grade = update_form.cleaned_data["grade"]
             picture = update_form.cleaned_data["picture"]
+            if picture:
+                fs = FileSystemStorage()
             student.save()
     return render(
         request, "form_app/update_student.html", context={
