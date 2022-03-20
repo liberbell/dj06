@@ -1,0 +1,14 @@
+{% extends 'form_app/base.html' %}
+
+{% block title %}
+Member update{{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ update_form.as_p }}
+    <input type="submit" value="Member update">
+    <p><img src="{{ student.picture.url }}"></p>
+</form>
+{% endblock content %}
