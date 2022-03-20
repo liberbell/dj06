@@ -58,3 +58,8 @@ def delete_student(request, id):
         delete_form = forms.StudentDeleteForm(request.POST or None)
         if delete_form.is_valid():
             Students.objects.get(id=delete_form.cleaned_data["id"]).delete()
+    return render(
+        request, "form_app/delete_student.html", context={
+            "delete_form": delete_form
+        }
+    )
