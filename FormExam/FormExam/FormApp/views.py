@@ -30,7 +30,7 @@ def update_student(request, id):
         }
     )
     if request.method == "POST":
-        pass
+        update_form = forms.StudentUpdateForm(request.POST or None, request.FILES or None)
     return render(
         request, "form_app/update_student.html", context={
         "update_form": update_form,
