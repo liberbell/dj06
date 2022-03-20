@@ -40,6 +40,8 @@ def update_student(request, id):
             picture = update_form.cleaned_data["picture"]
             if picture:
                 fs = FileSystemStorage()
+                file_name = fs.save(os.path.join("student", picture.name), picture)
+                student.picture = file_name
             student.save()
     return render(
         request, "form_app/update_student.html", context={
