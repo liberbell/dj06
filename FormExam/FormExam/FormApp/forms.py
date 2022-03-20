@@ -16,3 +16,6 @@ class StudentUpdateForm(forms.Form):
     age = forms.IntegerField(label="age")
     grade = forms.IntegerField(label="grade")
     picture = forms.FileField(label="file_upload", required=False)
+
+class StudentDeleteForm(forms.Form):
+    id = forms.IntegerField(widget=forms.HiddenInput)
