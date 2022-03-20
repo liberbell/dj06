@@ -35,6 +35,8 @@ def update_student(request, id):
             student.name = update_form.cleaned_data["name"]
             student.age = update_form.cleaned_data["age"]
             student.grade = update_form.cleaned_data["grade"]
+            picture = update_form.cleaned_data["picture"]
+            student.save()
     return render(
         request, "form_app/update_student.html", context={
         "update_form": update_form,
