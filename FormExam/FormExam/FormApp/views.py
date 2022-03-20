@@ -31,6 +31,10 @@ def update_student(request, id):
     )
     if request.method == "POST":
         update_form = forms.StudentUpdateForm(request.POST or None, request.FILES or None)
+        if update_form.is_valid():
+            student.name = update_form.cleaned_data["name"]
+            student.age = update_form.cleaned_data["age"]
+            student.grade = update_form.cleaned_data["grade"]
     return render(
         request, "form_app/update_student.html", context={
         "update_form": update_form,
