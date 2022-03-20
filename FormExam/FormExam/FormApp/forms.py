@@ -15,4 +15,4 @@ class StudentUpdateForm(forms.Form):
     name = forms.CharField(label="name")
     age = forms.IntegerField(label="age")
     grade = forms.IntegerField(label="grade")
-    picture = forms.FileField(label="file_upload")
+    picture = forms.FileField(label="file_upload", required=False)
