@@ -54,3 +54,7 @@ def delete_student(request, id):
         initial={
             "id": id
         })
+    if request.method == "POST":
+        delete_form = forms.StudentDeleteForm(request.POST or None)
+        if delete_form.is_valid():
+            Students.objects.get(id=delete_form.cleaned_data["id"]).delete()
