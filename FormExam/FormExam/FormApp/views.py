@@ -48,3 +48,9 @@ def update_student(request, id):
         "update_form": update_form,
         "student": student
     })
+
+def delete_student(request, id):
+    delete_form = forms.StudentDeleteForm(
+        initial={
+            "id": id
+        })
