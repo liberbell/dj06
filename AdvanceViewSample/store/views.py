@@ -7,3 +7,6 @@ def item_list(request):
     return render(request, "store/item_list.html", context={
         "items": items
     })
+
+def item_detail(request, id):
+    item = Items.objects.filter(pk=id).first()
