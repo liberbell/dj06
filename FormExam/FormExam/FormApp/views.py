@@ -66,4 +66,5 @@ def delete_student(request, id):
     )
 
 def insert_multiple_students(request):
-    StudentFormSet = modelformset_factory(students, fields="__all__", extra=3)
+    StudentFormSet = modelformset_factory(Students, fields="__all__", extra=3)
+    insert_form = StudentFormSet(request.POST or None, request.FILES or None)
