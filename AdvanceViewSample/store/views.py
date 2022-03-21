@@ -3,4 +3,7 @@ from .models import Items
 
 # Create your views here.
 def item_list(request):
-    return render(request, "store/item_list.html")
+    items = Items.objects.all()
+    return render(request, "store/item_list.html", context={
+        "items": items
+    })
