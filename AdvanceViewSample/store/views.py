@@ -10,3 +10,6 @@ def item_list(request):
 
 def item_detail(request, id):
     item = Items.objects.filter(pk=id).first()
+    return render(request, "store/item_detail.html", context={
+        "item": item
+    })
