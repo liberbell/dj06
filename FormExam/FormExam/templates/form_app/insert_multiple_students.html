@@ -1,1 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'form_app/base.html' %}
+
+{% block title %}
+Insert Multiple Member{{ block.super }}
+{% endblock title %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ insert_form.as_p }}
+    <input type="submit" value="Add Multiple Member">
+</form>
+{% endblock content %}
