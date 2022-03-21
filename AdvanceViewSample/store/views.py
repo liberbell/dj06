@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Items
 
 # Create your views here.
@@ -13,3 +13,6 @@ def item_detail(request, id):
     return render(request, "store/item_detail.html", context={
         "item": item
     })
+
+def to_google(request):
+    return redirect("https://www.google.com")
