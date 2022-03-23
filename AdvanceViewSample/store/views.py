@@ -11,7 +11,7 @@ def item_list(request):
 
 def item_detail(request, id):
     if id == 0:
-        raise Http404()
+        raise Http404
     item = Items.objects.filter(pk=id).first()
     if item is None:
         return redirect("store:item_list")
