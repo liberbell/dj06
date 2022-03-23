@@ -13,8 +13,8 @@ def item_detail(request, id):
     if id == 0:
         raise Http404
     item = Items.objects.filter(pk=id).first()
-    if item is None:
-        return redirect("store:item_list")
+    # if item is None:
+    #     return redirect("store:item_list")
     return render(request, "store/item_detail.html", context={
         "item": item
     })
