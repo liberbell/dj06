@@ -13,8 +13,8 @@ def item_detail(request, id):
     if id == 0:
         raise Http404
     item = Items.objects.filter(pk=id).first()
-    # if item is None:
-    #     return redirect("store:item_list")
+    if item is None:
+        return redirect("store:item_list")
     return render(request, "store/item_detail.html", context={
         "item": item
     })
@@ -26,5 +26,5 @@ def one_item(request):
     return redirect("store:item_detail", id=1)
 
 def page_not_found(request, exception):
-    # return render(request, "store/404.html", status=404)
-    return redirect("store:item_list")
+    return render(request, "store/404.html", status=404)
+    # return redirect("store:item_list")
