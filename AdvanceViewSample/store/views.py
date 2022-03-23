@@ -18,4 +18,4 @@ def to_google(request):
     return redirect("https://www.google.com")
 
 def one_item(request):
-    return redirect("store:item_detail")
+    return redirect("store:item_detail", id=1)
