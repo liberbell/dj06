@@ -23,4 +23,5 @@ def one_item(request):
     return redirect("store:item_detail", id=1)
 
 def page_not_found(request, exception):
-    return render(request, "store/404.html", status=404)
+    # return render(request, "store/404.html", status=404)
+    return redirect("store:item_list")
