@@ -10,6 +10,8 @@ def item_list(request):
 
 def item_detail(request, id):
     item = Items.objects.filter(pk=id).first()
+    if item is None:
+        return redirect("store/item_list")
     return render(request, "store/item_detail.html", context={
         "item": item
     })
