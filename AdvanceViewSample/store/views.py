@@ -5,7 +5,7 @@ from django.http import Http404
 # Create your views here.
 def item_list(request):
     items = Items.objects.all()
-    items = get_list_or_404(Items, pk__gt=2)
+    items = get_list_or_404(Items, pk__gt=4)
     return render(request, "store/item_list.html", context={
         "items": items
     })
