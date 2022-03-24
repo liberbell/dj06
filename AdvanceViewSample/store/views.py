@@ -1,18 +1,19 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404, get_list_or_404
 from .models import Items
 from django.http import Http404
 
 # Create your views here.
 def item_list(request):
     items = Items.objects.all()
-    return render(request, "store/itemlist.html", context={
+    return render(request, "store/item_list.html", context={
         "items": items
     })
 
 def item_detail(request, id):
     if id == 0:
         raise Http404
-    item = Items.objects.filter(pk=id).first()
+    # item = Items.objects.filter(pk=id).first()
+    item = get_object_or_404(Items, pk=id)
     if item is None:
         return redirect("store:item_list")
     return render(request, "store/item_detail.html", context={
