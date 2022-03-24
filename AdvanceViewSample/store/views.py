@@ -5,7 +5,7 @@ from django.http import Http404
 # Create your views here.
 def item_list(request):
     items = Items.objects.all()
-    return render(request, "store/item_list.html", context={
+    return render(request, "store/itemlist.html", context={
         "items": items
     })
 
