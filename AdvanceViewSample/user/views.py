@@ -9,4 +9,5 @@ def index(request):
     return render(request, "user/index.html")
 
 def register(request):
-    user_form = 
+    user_form = UserForm(request.POST or None)
+    profile_home = ProfileForm(request.POST or None, request.FILES or None)
