@@ -11,3 +11,7 @@ def index(request):
 def register(request):
     user_form = UserForm(request.POST or None)
     profile_home = ProfileForm(request.POST or None, request.FILES or None)
+    if user_form.is_valid() and profile_home.is_valid():
+        user = user_form.save()
+        user.set_password(user.password)
+        profile = profile_home.save()
