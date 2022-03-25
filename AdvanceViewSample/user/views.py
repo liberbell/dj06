@@ -14,4 +14,7 @@ def register(request):
     if user_form.is_valid() and profile_home.is_valid():
         user = user_form.save()
         user.set_password(user.password)
-        profile = profile_home.save()
+        user.save()
+        profile= profile_home.save(commit=False)
+        profile.user = user
+        profile.save()
