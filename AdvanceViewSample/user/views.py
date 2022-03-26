@@ -15,6 +15,6 @@ def register(request):
         user = user_form.save()
         user.set_password(user.password)
         user.save()
-        profile= profile_home.save(commit=False)
+        profile = profile_home.save(commit=False)
         profile.user = user
         profile.save()
