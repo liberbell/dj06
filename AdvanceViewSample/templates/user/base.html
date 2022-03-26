@@ -10,5 +10,9 @@
             <a href="{% url "admin:index" %}">Admin</a>
             <a href="{% url "user:register" %}">Registration</a>
         </nav>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
     </body>
 </html>
