@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>User Registration</h1>
-<form method="POST" enctype="multipart/form-data"></form>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ user_form.as_p }}
+    {{ profile_form.as_p }}
+    <input type="submit" value="Regist">
+</form>
 {% endblock content %}
