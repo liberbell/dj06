@@ -18,3 +18,7 @@ def register(request):
         profile = profile_home.save(commit=False)
         profile.user = user
         profile.save()
+    return render(request, "user/registration.html", context={
+        "user_form": user_form,
+        "profile_home": profile_home,
+    })
