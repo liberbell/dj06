@@ -23,3 +23,4 @@ class ProfileForm(forms.ModelForm):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50, label="Name")
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
+    confirm_password = forms.CharField(label="Password", widget=forms.PasswordInput())
