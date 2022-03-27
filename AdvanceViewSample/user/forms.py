@@ -23,4 +23,11 @@ class ProfileForm(forms.ModelForm):
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50, label="Name")
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
-    confirm_password = forms.CharField(label="Password", widget=forms.PasswordInput())
+    confirm_password = forms.CharField(label="Confirm Password", widget=forms.PasswordInput())
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data["password"]
+        confirm_password = cleaned_data["confirm_password"]
+        if password != confirm_password:
+            raise forms.ValidationError("Don`t mutch password.")
