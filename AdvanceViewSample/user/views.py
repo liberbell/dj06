@@ -1,4 +1,5 @@
 from distutils.log import Log
+from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from user.forms import UserForm, ProfileForm, LoginForm
 from django.contrib.auth import authenticate, login
@@ -38,3 +39,8 @@ def user_login(request):
                 return redirect("user:index")
             else:
                 return HttpResponse("User is not found.")
+        else:
+            return HttpResponse("User is not found.")
+    return render(request, "user/login.html", context={
+        "login_form": login_form
+    })
