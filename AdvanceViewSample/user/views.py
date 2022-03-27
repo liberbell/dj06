@@ -10,15 +10,15 @@ def index(request):
 
 def register(request):
     user_form = UserForm(request.POST or None)
-    profile_home = ProfileForm(request.POST or None, request.FILES or None)
-    if user_form.is_valid() and profile_home.is_valid():
+    profile_form = ProfileForm(request.POST or None, request.FILES or None)
+    if user_form.is_valid() and profile_form.is_valid():
         user = user_form.save()
         user.set_password(user.password)
         user.save()
-        profile = profile_home.save(commit=False)
+        profile = profile_form.save(commit=False)
         profile.user = user
         profile.save()
     return render(request, "user/registration.html", context={
         "user_form": user_form,
-        "profile_home": profile_home,
+        "profile_home": profile_form,
     })
