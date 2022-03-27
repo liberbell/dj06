@@ -20,5 +20,5 @@ def register(request):
         profile.save()
     return render(request, "user/registration.html", context={
         "user_form": user_form,
-        "profile_home": profile_form,
+        "profile_form": profile_form,
     })
