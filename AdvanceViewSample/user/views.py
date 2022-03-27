@@ -1,6 +1,8 @@
 from distutils.log import Log
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from user.forms import UserForm, ProfileForm, LoginForm
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponse
 
 # Create your views here.
 def user_list(request):
@@ -29,3 +31,4 @@ def user_login(request):
     if login_form.is_valid():
         username = login_form.cleaned_data.get("username")
         password = login_form.cleaned_data.get("password")
+        user = authenticate(username=username, password=password)
