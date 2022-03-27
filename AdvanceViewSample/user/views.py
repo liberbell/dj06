@@ -36,7 +36,7 @@ def user_login(request):
         password = login_form.cleaned_data.get("password")
         user = authenticate(username=username, password=password)
         if user:
-            if user.is_active():
+            if user.is_active:
                 login(request, user)
                 return redirect("user:index")
             else:
