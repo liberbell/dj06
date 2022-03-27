@@ -9,9 +9,11 @@
             <a href="{% url "user:index" %}">User</a>
             <a href="{% url "admin:index" %}">Admin</a>
             {% if user.is_authenticated %}
-            <a href="{% url "user:user_logout" %}"></a>
+                <a href="{% url "user:user_logout" %}">Log out.</a>
+            {% else %}
+                <a href="{% url "user:login" %}>Login</a>
+                <a href="{% url "user:register" %}">Registration</a>
             {% endif %}
-            <a href="{% url "user:register" %}">Registration</a>
         </nav>
         <div>
             {% block content %}
