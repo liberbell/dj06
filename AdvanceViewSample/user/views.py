@@ -1,4 +1,5 @@
 from distutils.log import Log
+from logging import LogRecord
 from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from user.forms import UserForm, ProfileForm, LoginForm
@@ -50,3 +51,7 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect("user:index")
+
+@login_required
+def info(request):
+    return HttpResponse("Already login.")
