@@ -22,7 +22,7 @@ def register(request):
             validate_password(user_form.cleaned_data.get("password"), user)
         except:
             user_form.add_error("password", e)
-            return render(request, "user/registration.html" context={
+            return render(request, "user/registration.html", context={
                 "user_form": user_form,
                 "profile_form": profile_form,
             })
