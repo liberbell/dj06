@@ -6,7 +6,7 @@
     </head>
     <body>
         <nav>
-            <a href="{% url "user:index" %}">User</a>
+            <a href="{% url "user:index" %}">Home</a>
             <a href="{% url "admin:index" %}">Admin</a>
             {% if user.is_authenticated %}
                 <a href="{% url "user:user_logout" %}">Log out.</a>
