@@ -20,6 +20,12 @@ def register(request):
         user = user_form.save(commit=False)
         try:
             validate_password(user_form.cleaned_data.get("password"), user)
+        except:
+            user_form.add_error("password", e)
+            return render(request, "user/registration.html" context={
+                "user_form": user_form,
+                "profile_form": profile_form,
+            })
         user.set_password(user.password)
         user.save()
         profile = profile_form.save(commit=False)
