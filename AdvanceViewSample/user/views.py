@@ -20,7 +20,7 @@ def register(request):
         user = user_form.save(commit=False)
         try:
             validate_password(user_form.cleaned_data.get("password"), user)
-        except:
+        except ValidationError as e:
             user_form.add_error("password", e)
             return render(request, "user/registration.html", context={
                 "user_form": user_form,
