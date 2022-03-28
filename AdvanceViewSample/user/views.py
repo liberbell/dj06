@@ -1,5 +1,3 @@
-from distutils.log import Log
-from logging import LogRecord
 from wsgiref.util import request_uri
 from django.shortcuts import render, redirect
 from user.forms import UserForm, ProfileForm, LoginForm
