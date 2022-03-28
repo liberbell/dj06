@@ -1,4 +1,3 @@
-from signal import raise_signal
 from django.core.exceptions import ValidationError
 import re
 
