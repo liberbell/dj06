@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'utils.validators.CustomPasswordValidator',
-    }
+    },
 ]
 
 
