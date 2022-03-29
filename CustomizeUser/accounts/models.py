@@ -12,3 +12,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     website = models.URLField(null=True)
     picture = models.FileField(null=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELD = ['username']
