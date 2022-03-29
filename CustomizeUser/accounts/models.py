@@ -9,6 +9,13 @@ class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None)
     if not email:
         raise ValueError("Email not found")
+    user = self.model(
+        username = username,
+        email = email
+    )
+    user.set_password(password)
+    user.save()
+
 
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=150)
