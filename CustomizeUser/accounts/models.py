@@ -6,7 +6,7 @@ from django.contrib.auth.models import (
 
 # Create your models here.
 class UserManager(BaseUserManager):
-
+    def create_superuser()
 
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=150)
@@ -20,7 +20,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELD = ['username']
 
     objects = UserManager()
-
 
     def __str__(self):
         return self.email
