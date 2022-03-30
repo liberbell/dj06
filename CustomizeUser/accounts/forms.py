@@ -8,3 +8,10 @@ User = get_user_model()
 class UserCreationForm(forms.ModelForm):
     Password = forms.CharField(label="password", widget=forms.PasswordInput)
     Confirm_password = forms.CharField(label="confirm password", widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        field = ('username', "email", "password")
+
+    def clean(self):
+        cleaned_data = super().clean()
