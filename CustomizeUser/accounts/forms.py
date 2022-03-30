@@ -1,3 +1,4 @@
+from dataclasses import field
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.contrib.auth import get_user_model
@@ -30,3 +31,10 @@ class UserChangeForm(forms.ModelForm):
     password = ReadOnlyPasswordHashField()
     website = forms.URLField(required=False)
     picture = forms.FileField(required=False)
+
+    class Meta:
+        model = User
+        fields = ("username", "email", "password", "is_staff", "is_active", "website", "picture")
+
+    def clean_password(self):
+        return self.initial["password"]
