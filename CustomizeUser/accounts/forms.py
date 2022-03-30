@@ -22,3 +22,6 @@ class UserCreationForm(forms.ModelForm):
 
     def save(self):
         user = super().save(commit=False)
+        user.set_password(self.cleaned_data.get("password"))
+        user.save()
+        return user
