@@ -26,5 +26,7 @@ class UserCreationForm(forms.ModelForm):
         user.save()
         return user
 
-    def UserChangeForm(forms.ModelForm):
-        password = ReadOnlyPasswordHashField()
+class UserChangeForm(forms.ModelForm):
+    password = ReadOnlyPasswordHashField()
+    website = forms.URLField(required=False)
+    picture = forms.FileField(required=False)
