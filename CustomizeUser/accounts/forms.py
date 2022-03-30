@@ -19,3 +19,6 @@ class UserCreationForm(forms.ModelForm):
         confirm_password = cleaned_data.get("confirm_password")
         if password != confirm_password:
             raise ValidationError("Password not match!")
+
+    def save(self):
+        user = super().save(commit=False)
