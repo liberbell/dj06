@@ -25,3 +25,6 @@ class UserCreationForm(forms.ModelForm):
         user.set_password(self.cleaned_data.get("password"))
         user.save()
         return user
+
+    def UserChangeForm(forms.ModelForm):
+        password = ReadOnlyPasswordHashField()
