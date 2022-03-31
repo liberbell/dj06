@@ -1,3 +1,4 @@
+from tabnanny import verbose
 from django.db import models
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser, PermissionsMixin
@@ -57,9 +58,11 @@ class Students(models.Model):
 
     class Meta:
         db_table = 'students'
+        verbose_name_plural = "Student"
 
 class Schools(models.Model):
     name = models.CharField(max_length=20)
     
     class Meta:
         db_table = 'schools'
+        verbose_name_plural = "School"
