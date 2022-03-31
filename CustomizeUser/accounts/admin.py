@@ -15,3 +15,8 @@ class CustomizeUserAdmin(UserAdmin):
         ("User Info", {'fields': ("username", "email", "password", "website", "picture")}),
         ("Permission Group", {'fields': ("is_staff", "is_active", "is_superuser")}),
     )
+
+    add_fieldsets = (
+        ("User Info", {'fields': ("username", "email", "password", "confirm_password")
+        }),
+    )
