@@ -4,7 +4,7 @@ from django.contrib.auth import get_user_model
 from .forms import UserChangeForm, UserCreationForm
 
 # Register your models here.
-user = get_user_model()
+User = get_user_model()
 
 class CustomizeUserAdmin(UserAdmin):
     form = UserChangeForm
@@ -12,6 +12,6 @@ class CustomizeUserAdmin(UserAdmin):
 
     list_display = ("username", "email", "is_staff")
     fieldsets = (
-        "User Info", {'fields': ("username", "email", "password", "website", "picture")},
-        "Permission Group", {'fields': ("is_staff", "is_active", "is_superuser")}
+        ("User Info", {'fields': ("username", "email", "password", "website", "picture")}),
+        ("Permission Group", {'fields': ("is_staff", "is_active", "is_superuser")}),
     )
