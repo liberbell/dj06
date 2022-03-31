@@ -29,3 +29,4 @@ admin.site.register(Schools)
 @admin.register(Students)
 class StudentAdmin(admin.ModelAdmin):
     fields = ("name", "score", "age", "school")
+    list_display = ("name", "age", "score", "school", "id")
