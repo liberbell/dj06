@@ -8,3 +8,6 @@ user = get_user_model()
 
 class CustomizeUserAdmin(UserAdmin):
     form = UserChangeForm
+    add_form = UserCreationForm
+
+    list_display = ("username", "email", "is_staff")
