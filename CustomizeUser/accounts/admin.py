@@ -12,5 +12,6 @@ class CustomizeUserAdmin(UserAdmin):
 
     list_display = ("username", "email", "is_staff")
     fieldsets = (
-        "User Info", {'fields': ("username", "email", "password", "website", "picture")} 
+        "User Info", {'fields': ("username", "email", "password", "website", "picture")},
+        "Permission Group", {'fields': ("is_staff", "is_active", "is_superuser")}
     )
