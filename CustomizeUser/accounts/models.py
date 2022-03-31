@@ -60,9 +60,15 @@ class Students(models.Model):
         db_table = 'students'
         verbose_name_plural = "Student"
 
+    def __str__(self):
+        return self.name + ': ' + self.age
+
 class Schools(models.Model):
     name = models.CharField(max_length=20)
     
     class Meta:
         db_table = 'schools'
         verbose_name_plural = "School"
+
+    def __str__(self):
+        return self.name
