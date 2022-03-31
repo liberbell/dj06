@@ -61,7 +61,7 @@ class Students(models.Model):
         verbose_name_plural = "Student"
 
     def __str__(self):
-        return self.name + ': ' + self.age
+        return self.name + ': ' + str(self.age)
 
 class Schools(models.Model):
     name = models.CharField(max_length=20)
