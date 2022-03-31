@@ -23,8 +23,9 @@ class CustomizeUserAdmin(UserAdmin):
     )
 
 admin.site.register(User, CustomizeUserAdmin)
-admin.site.register(Students)
+# admin.site.register(Students)
 admin.site.register(Schools)
 
 @admin.register(Students)
 class StudentAdmin(admin.ModelAdmin):
+    fields = ("name", "score", "age", "school")
