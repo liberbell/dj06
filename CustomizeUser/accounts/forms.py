@@ -6,8 +6,8 @@ from django.core.exceptions import ValidationError
 User = get_user_model()
 
 class UserCreationForm(forms.ModelForm):
-    Password = forms.CharField(label="password", widget=forms.PasswordInput)
-    Confirm_password = forms.CharField(label="confirm password", widget=forms.PasswordInput)
+    password = forms.CharField(label="password", widget=forms.PasswordInput)
+    confirm_password = forms.CharField(label="confirm password", widget=forms.PasswordInput)
 
     class Meta:
         model = User
@@ -33,7 +33,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ("username", "email", "password", "is_staff", "is_active", "website", "picture")
+        fields = ("username", "email", "password", "is_staff", "is_active", "is_superuser", "website", "picture")
 
     def clean_password(self):
         return self.initial["password"]
