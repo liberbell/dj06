@@ -33,4 +33,4 @@ class StudentAdmin(admin.ModelAdmin):
     list_display_links = ("id",)
     search_fields = ("name", "age")
     list_filter = ("name", "age", "score", "school")
-    list_editable = ("age", "age", "score")
+    list_editable = ("name", "age", "score")
