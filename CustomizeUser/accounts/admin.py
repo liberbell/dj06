@@ -24,7 +24,7 @@ class CustomizeUserAdmin(UserAdmin):
 
 admin.site.register(User, CustomizeUserAdmin)
 # admin.site.register(Students)
-admin.site.register(Schools)
+# admin.site.register(Schools)
 
 @admin.register(Students)
 class StudentAdmin(admin.ModelAdmin):
@@ -33,4 +33,8 @@ class StudentAdmin(admin.ModelAdmin):
     list_display_links = ("id",)
     search_fields = ("name", "age")
     list_filter = ("name", "age", "score", "school")
-    list_editable = ("name", "age", "score")
+    list_editable = ("name", "age", "score", "school")
+
+@admin.register(Schools)
+class SchoolsAdmin(admin.ModelAdmin):
+    list_display = ("name", "student_count")
