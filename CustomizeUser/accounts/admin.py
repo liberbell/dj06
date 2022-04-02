@@ -40,7 +40,9 @@ class SchoolsAdmin(admin.ModelAdmin):
     list_display = ("name", "student_count")
 
     def student_count(self, obj):
-        print(type(obj))
-        print(dir(obj))
+        # print(type(obj))
+        # print(dir(obj))
         count = obj.students_set.count()
         return count
+
+    student_count.short_description = "Student Counts"
