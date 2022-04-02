@@ -59,10 +59,10 @@ class Students(models.Model):
     class Meta:
         db_table = 'students'
         verbose_name_plural = "Student"
+        ordering = ('score', )
 
     def __str__(self):
         return self.name + ': ' + str(self.age)
-        ordering = ('score', )
 
 class Schools(models.Model):
     name = models.CharField(max_length=20)
