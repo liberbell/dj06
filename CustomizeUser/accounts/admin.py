@@ -38,3 +38,7 @@ class StudentAdmin(admin.ModelAdmin):
 @admin.register(Schools)
 class SchoolsAdmin(admin.ModelAdmin):
     list_display = ("name", "student_count")
+
+    def student_count(self, object):
+        count = obj.students_set.count()
+        return count
