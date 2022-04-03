@@ -11,3 +11,9 @@ class Users(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     picture = models.FileField(null=True, upload_to='picture/')
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELD = ["username"]
+
+    class Meta:
+        db_table = "email"
