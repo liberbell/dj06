@@ -5,3 +5,6 @@ def home(request):
     return render(
         request, "accounts/home.html"
     )
+
+def regist(request):
+    regist_form = 
