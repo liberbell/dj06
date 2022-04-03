@@ -5,4 +5,6 @@ from django.contrib.auth.models import (
 
 # Create your models here.
 class Users(AbstractBaseUser, PermissionsMixin):
-    
+    username = models.CharField(max_length=255)
+    age = models.PositiveIntegerField()
+    email = models.EmailField(max_length=255)
