@@ -7,4 +7,4 @@ def home(request):
     )
 
 def regist(request):
-    regist_form = 
+    regist_form = forms.RegistForm(request.POST or None)
