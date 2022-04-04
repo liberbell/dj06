@@ -10,4 +10,4 @@ class RegistForm(forms.ModelForm):
 
     class Meta():
         model = Users
-        fields = {""}
+        fields = {"username", "age", "email", "password"}
