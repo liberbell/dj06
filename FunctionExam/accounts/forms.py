@@ -7,3 +7,7 @@ class RegistForm(forms.ModelForm):
     email = forms.EmailField(label="E-Mail")
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
     confirm_password = forms.CharField(label="Re-enter Password", widget=forms.PasswordInput)
+
+    class Meta():
+        model = Users
+        fields = {""}
