@@ -11,3 +11,11 @@ class RegistForm(forms.ModelForm):
     class Meta():
         model = Users
         fields = {"username", "age", "email", "password"}
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data["password"]
+        confirm_password = cleaned_data["confirm_password"]
+
+        if password != confirm_password:
+            raise forms.ValidationError("Password not match.")
