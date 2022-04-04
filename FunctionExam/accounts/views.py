@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import forms
 from django.core.exceptions import ValidationError
 
@@ -13,6 +13,7 @@ def regist(request):
     if regist_form.is_valid():
         try:
             regist_form.save()
+            return redirect("accounts:home")
         except ValidationError as err:
             regist_form.add_error("password", err)
 
