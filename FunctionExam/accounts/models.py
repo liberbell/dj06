@@ -4,6 +4,8 @@ from django.contrib.auth.models import (
 )
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from uuid import uuid4
+from datetime import datetime, timedelta
 
 # Create your models here.
 class Users(AbstractBaseUser, PermissionsMixin):
@@ -29,3 +31,12 @@ class UserActivateToken(models.Model):
 
     class Meta:
         db_table = "user_active_tokens"
+
+@receiver(post_save, sender=Users)
+def publish_token(sender, instance, **kwargs):
+    print(uuid4())
+    user_activate_token = UserActivateToken.objects.create(
+        user = instance,
+        token = str(uuid4()),
+        expired_at = datetime.now + timedelta(days=1)
+    )
