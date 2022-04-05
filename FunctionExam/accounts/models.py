@@ -17,3 +17,6 @@ class Users(AbstractBaseUser, PermissionsMixin):
 
     class Meta:
         db_table = "users"
+
+class UserActivateToken(models.Model):
+    token = models.UUIDField(db_index=True)
