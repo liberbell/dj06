@@ -16,4 +16,4 @@ class Users(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELD = ["username"]
 
     class Meta:
-        db_table = "email"
+        db_table = "users"
