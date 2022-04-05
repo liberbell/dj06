@@ -20,3 +20,10 @@ class Users(AbstractBaseUser, PermissionsMixin):
 
 class UserActivateToken(models.Model):
     token = models.UUIDField(db_index=True)
+    expired_at = models.DateTimeField()
+    user = models.ForeignKey(
+        "users", on_delete=models.CASCADE
+    )
+
+    class Meta:
+        db_table = "user_active_tokens"
