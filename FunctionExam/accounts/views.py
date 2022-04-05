@@ -23,3 +23,5 @@ def regist(request):
         }
     )
 
+def activate_user(request, token):
+    pass
