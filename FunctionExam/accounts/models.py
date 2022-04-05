@@ -35,6 +35,7 @@ class UserActivateToken(models.Model):
 @receiver(post_save, sender=Users)
 def publish_token(sender, instance, **kwargs):
     print(uuid4())
+    print(datetime.now + timedelta(days=1))
     user_activate_token = UserActivateToken.objects.create(
         user = instance,
         token = str(uuid4()),
