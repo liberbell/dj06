@@ -22,11 +22,11 @@ class Users(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = "users"
 
-class UserActivateToken(models.Model):
+class UserActivateTokens(models.Model):
     token = models.UUIDField(db_index=True)
     expired_at = models.DateTimeField()
     user = models.ForeignKey(
-        "users", on_delete=models.CASCADE
+        "Users", on_delete=models.CASCADE
     )
 
     class Meta:
@@ -36,9 +36,9 @@ class UserActivateToken(models.Model):
 def publish_token(sender, instance, **kwargs):
     print(uuid4())
     print(datetime.now() + timedelta(days=1))
-    user_activate_token = UserActivateToken.objects.create(
+    user_activate_token = UserActivateTokens.objects.create(
         user = instance,
         token = str(uuid4()),
         expired_at = datetime.now() + timedelta(days=1)
     )
-    print(f'http://127.0.0.1:8000/accounts/activate_user/{user_activate_token}')
+    print(f'http://127.0.0.1:8000/accounts/activate_user/{user_activate_token.token}')
