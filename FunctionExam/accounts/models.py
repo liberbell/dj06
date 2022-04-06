@@ -35,10 +35,10 @@ class UserActivateToken(models.Model):
 @receiver(post_save, sender=Users)
 def publish_token(sender, instance, **kwargs):
     print(uuid4())
-    print(datetime.now + timedelta(days=1))
+    print(datetime.now() + timedelta(days=1))
     user_activate_token = UserActivateToken.objects.create(
         user = instance,
         token = str(uuid4()),
-        expired_at = datetime.now + timedelta(days=1)
+        expired_at = datetime.now() + timedelta(days=1)
     )
     print(f'http://127.0.0.1:8000/accounts/activate_user/{user_activate_token}')
