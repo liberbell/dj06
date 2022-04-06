@@ -28,7 +28,10 @@ class UserActivateTokensManager(models.Manager):
         user_activate_token = self.filter(
             token = token,
             expired_at__gte = datetime.now()
-        )
+        ).first()
+        user = user_activate_token.user
+        user.is_active = True
+        user.save()
 
 class UserActivateTokens(models.Model):
     token = models.UUIDField(db_index=True)
