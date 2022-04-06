@@ -40,6 +40,8 @@ class UserActivateTokens(models.Model):
         "Users", on_delete=models.CASCADE
     )
 
+    objects = UserActivateTokensManager()
+
     class Meta:
         db_table = "user_active_tokens"
 
