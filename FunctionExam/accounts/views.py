@@ -40,7 +40,7 @@ def user_login(request):
             login(request, user)
             return redirect("accounts:home")
         else:
-
+            messages.warning(request, "User unknown.")
 
 def user_logout(request):
     pass
