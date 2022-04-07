@@ -29,6 +29,7 @@ def activate_user(request, token):
     return render(request, "accounts/activate_user.html")
 
 def user_login(request):
-    
+    login_form = forms.Login(request.POST or None)
 
 def user_logout(request):
+    pass
