@@ -30,3 +30,4 @@ class RegistForm(forms.ModelForm):
 
 class LoginForm(forms.Form):
     email = forms.CharField(label="E-Mail")
+    password = forms.CharField(label="Password")
