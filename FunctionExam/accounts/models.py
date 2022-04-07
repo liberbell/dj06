@@ -6,6 +6,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from uuid import uuid4
 from datetime import datetime, timedelta
+from django.contrib.auth.models import UserManager
 
 # Create your models here.
 class Users(AbstractBaseUser, PermissionsMixin):
