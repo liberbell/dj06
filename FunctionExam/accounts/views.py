@@ -27,3 +27,8 @@ def regist(request):
 def activate_user(request, token):
     user_activate_token = UserActivateTokens.objects.activate_user_by_token(token)
     return render(request, "accounts/activate_user.html")
+
+def user_login(request):
+    
+
+def user_logout(request):
