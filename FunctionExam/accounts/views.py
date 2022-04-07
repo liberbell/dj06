@@ -55,5 +55,5 @@ def user_login(request):
 @login_required
 def user_logout(request):
     logout(request)
-    messages.success(request, "Loged out.")
+    messages.success(request, "Logged out.")
     return redirect("accounts:home")
