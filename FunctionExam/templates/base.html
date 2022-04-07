@@ -10,6 +10,7 @@
             {% if user.is_authenticated %}
 
             {% else %}
+                <a class="navbar-brand" href="{% url 'accounts:user_login' %}">User Login</a>
                 <a class="navbar-brand" href="{% url 'accounts:regist' %}">User Regist</a>
             {% endif %}
         </nav>
