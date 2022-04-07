@@ -36,14 +36,21 @@ def user_login(request):
         email = login_form.cleaned_data.get("email")
         password = login_form.cleaned_data.get("password")
         user = authenticate(email=email, password=password)
-        if user.is_active():
-            login(request, user)
-            messages.success(request, "Login successfully")
-            return redirect("accounts:home")
+        if user:
+            if user.is_active():
+                login(request, user)
+                messages.success(request, "Login successfully")
+                return redirect("accounts:home")
+            else:
+                messages.warning(request, "User unknown.")
         else:
-            messages.warning(request, "User unknown.")
-    else:
-        messages.warning(request, "User or password is wrong.")
+            messages.warning(request, "User or password is wrong.")
+    return render(
+        request, "accounts/user_login.html", context={
+            "login_form": login_form
+        }
+    )
+
 
 def user_logout(request):
     pass
