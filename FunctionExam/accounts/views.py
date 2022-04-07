@@ -41,6 +41,8 @@ def user_login(request):
             return redirect("accounts:home")
         else:
             messages.warning(request, "User unknown.")
+    else:
+        messages.warning(request, "User or password is wrong.")
 
 def user_logout(request):
     pass
