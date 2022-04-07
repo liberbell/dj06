@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if messages %}
+    {% for message in messages %}
+        <div>{{ message.message }}</div>
+    {% endfor %}
+{% endif %}
 This is home page.
 {% endblock content %}
