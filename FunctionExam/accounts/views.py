@@ -4,6 +4,7 @@ from django.core.exceptions import ValidationError
 from .models import UserActivateTokens
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -47,10 +48,12 @@ def user_login(request):
             messages.warning(request, "User or password is wrong.")
     return render(
         request, "accounts/user_login.html", context={
-            "login_form": login_form
+            "login_form": login_form,
         }
     )
 
-
+@login_required
 def user_logout(request):
-    pass
+    logout(request)
+    messages.success(request, "Loged out.")
+    return redirect("accounts:home")
