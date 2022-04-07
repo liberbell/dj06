@@ -38,6 +38,7 @@ def user_login(request):
         user = authenticate(email=email, password=password)
         if user.is_active():
             login(request, user)
+            messages.success(request, "Login successfully")
             return redirect("accounts:home")
         else:
             messages.warning(request, "User unknown.")
