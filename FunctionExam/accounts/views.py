@@ -29,7 +29,9 @@ def activate_user(request, token):
     return render(request, "accounts/activate_user.html")
 
 def user_login(request):
-    login_form = forms.Login(request.POST or None)
+    login_form = forms.LoginForm(request.POST or None)
+    if login_form.is_valid():
+        email = login_form.cleaned_data.get("email")
 
 def user_logout(request):
     pass
