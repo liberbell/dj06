@@ -35,3 +35,9 @@ class LoginForm(forms.Form):
 class UserEditForm(forms.ModelForm):
     username = forms.CharField(label="Name")
     age = forms.IntegerField(label="Age", min_value=0)
+    email = forms.EmailField(label="E-mail")
+    picture = forms.FileField(label="Picture", required=False)
+
+    class Meta():
+        model = Users
+        fields = ("username", "age", "email", "picture")
