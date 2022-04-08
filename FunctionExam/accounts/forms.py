@@ -31,3 +31,7 @@ class RegistForm(forms.ModelForm):
 class LoginForm(forms.Form):
     email = forms.CharField(label="E-Mail")
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
+
+class UserEditForm(forms.ModelForm):
+    username = forms.CharField(label="Name")
+    age = forms.IntegerField(label="Age", min_value=0)
