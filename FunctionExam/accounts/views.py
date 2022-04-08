@@ -57,3 +57,7 @@ def user_logout(request):
     logout(request)
     messages.success(request, "Logged out.")
     return redirect("accounts:home")
+
+@login_required
+def user_edit(request):
+    user_edit = forms.UserEditForm(request.POST or None, request.FILES or None, instance=request.user)
