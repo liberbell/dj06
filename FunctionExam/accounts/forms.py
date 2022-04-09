@@ -48,7 +48,7 @@ class PasswordChangeForm(forms.ModelForm):
 
     class Meta():
         model = Users
-        fields = ("password")
+        fields = ("password", )
 
     def clean(self):
         cleaned_data = super().clean()
