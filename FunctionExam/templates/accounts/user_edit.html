@@ -6,10 +6,9 @@
         <div>{{ message.message }}</div>
     {% endfor %}
 {% endif %}
-<form method="POST">
+<form method="POST" enctype="multipart/form-datad">
     {% csrf_token %}
-    {{ user_edit_form.as_p }}
-    <input type="submit" value="Update">
+    {{ password_change_form.as_p }}
+    <input type="submit" value="Password Change">
 </form>
-    <a href="{% url 'accounts:change_password' %}">Password chage</a>
 {% endblock content %}
