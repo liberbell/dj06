@@ -5,6 +5,7 @@ from .models import UserActivateTokens
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import update_session_auth_hash
 
 # Create your views here.
 def home(request):
@@ -71,3 +72,8 @@ def user_edit(request):
 @login_required
 def change_password(request):
     password_change_form = forms.PasswordChangeForm(request.POST or None, instance=request.user)
+    if password_change_form.is_valid():
+        try:
+            password_change_form.save()
+            messages.success(request, "Update successfully")
+            update
