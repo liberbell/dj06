@@ -11,4 +11,5 @@
     {{ user_edit_form.as_p }}
     <input type="submit" value="Update">
 </form>
+<a href="{% url "accounts:change_password" %}">Password change</a>
 {% endblock content %}
