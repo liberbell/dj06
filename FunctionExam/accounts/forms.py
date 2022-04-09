@@ -43,8 +43,8 @@ class UserEditForm(forms.ModelForm):
         fields = ("username", "age", "email", "picture")
 
 class PasswordChangeForm(forms.ModelForm):
-    password = forms.CharField(label="Password", widget=forms.PasswordInput)
-    confirm_password = forms.CharField(label="Re-enter Password", widget=forms.PasswordInput)
+    password = forms.CharField(label="Password", widget=forms.PasswordInput())
+    confirm_password = forms.CharField(label="Re-enter Password", widget=forms.PasswordInput())
 
     class Meta():
         model = Users
