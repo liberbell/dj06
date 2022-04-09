@@ -67,3 +67,7 @@ def user_edit(request):
         return render(request, "accounts/user_edit.html", context={
             "user_edit_form": user_edit_form
         })
+
+@login_required
+def change_password(request):
+    password_change_form = forms.PasswordChangeForm(request.POST or None, instance=request.user)
