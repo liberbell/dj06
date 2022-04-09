@@ -76,4 +76,9 @@ def change_password(request):
         try:
             password_change_form.save()
             messages.success(request, "Update successfully")
-            update
+            update_session_auth_hash(request, request.user)
+        except ValidationError as err:
+            password_change_form.add_error("Invalid password", err)
+    return render(request, 'accounts/change_password.html' context={
+        "password_change_form": password_change_form
+    })
