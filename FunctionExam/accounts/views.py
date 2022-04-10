@@ -65,9 +65,9 @@ def user_edit(request):
     if user_edit_form.is_valid():
         messages.success(request, "Update successfully")
         user_edit_form.save()
-        return render(request, "accounts/user_edit.html", context={
-            "user_edit_form": user_edit_form,
-        })
+    return render(request, "accounts/user_edit.html", context={
+        "user_edit_form": user_edit_form,
+    })
 
 @login_required
 def change_password(request):
