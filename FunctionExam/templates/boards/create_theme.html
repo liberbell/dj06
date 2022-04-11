@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h3>Create Board</h3>
     <form method="POST">
         {% csrf_token %}
         {{ create_theme_form.as_p }}
-        <input type="submit">
+        <input type="submit" value="save">
     </form>
 {% endblock content %}
