@@ -1,0 +1,5 @@
+from .models import Themes, Comments
+from django import forms
+
+class CreateThemeForm(forms.ModelForm):
+    title = forms.CharField(label="Title")
