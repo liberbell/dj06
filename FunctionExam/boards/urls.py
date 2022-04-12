@@ -6,5 +6,5 @@ app_name = "boards"
 
 urlpatterns = [
     path("create_theme", views.create_theme, name="create_theme"),
-    path("list_theme", views.list_theme, name="list_theme"),
+    path("list_themes", views.list_themes, name="list_themes"),
 ]
