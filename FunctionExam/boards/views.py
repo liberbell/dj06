@@ -14,3 +14,6 @@ def create_theme(request):
     return render(request, "boards/create_theme.html", context={
         "create_theme_form": create_theme_form
     })
+
+def list_themes(request):
+    themes = 
