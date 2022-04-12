@@ -15,5 +15,14 @@
             <th>Writer</th>
         </tr>
     </thead>
+    <tbody>
+        {% for theme in themes %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ theme.title }}</td>
+            <td>{{ theme.user }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>
 {% endblock content %}
