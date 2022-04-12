@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import forms
 from django.contrib import messages
+from .models import Themes
 
 # Create your views here.
 def create_theme(request):
@@ -16,4 +17,4 @@ def create_theme(request):
     })
 
 def list_themes(request):
-    themes = 
+    themes = Themes.objects.fetch_all_themes()
