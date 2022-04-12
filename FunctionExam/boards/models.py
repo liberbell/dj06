@@ -12,6 +12,7 @@ class Themes(models.Model):
     user = models.ForeignKey(
         "accounts.Users", on_delete=models.CASCADE
     )
+    objects = ThemesManager()
 
     class Meta:
         db_table = "themes"
