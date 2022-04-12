@@ -18,3 +18,6 @@ def create_theme(request):
 
 def list_themes(request):
     themes = Themes.objects.fetch_all_themes()
+    return render(request, "boards/list_themes.html", context={
+        "themes": themes
+    })
