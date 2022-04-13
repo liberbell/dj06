@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class ThemesManager(models.Manager):
 
-    def fetch_all_thems(self):
+    def fetch_all_themes(self):
         return self.order_by('id').all()
 
 class Themes(models.Model):
