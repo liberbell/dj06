@@ -32,3 +32,8 @@ def edit_theme(request, id):
     if edit_theme_form.is_valid():
         edit_theme_form.save()
         messages.success(request, "Update theme")
+        return redirect("boards:list_themes")
+    return render(request, "boards/form_theme.html", context={
+        "edit_theme_form": edit_theme_form,
+        "id": id,
+    })
