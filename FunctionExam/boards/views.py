@@ -24,7 +24,7 @@ def list_themes(request):
     })
 
 def edit_theme(request, id):
-    theme = get_object_or_404(request, id=id)
+    theme = get_object_or_404(Themes, id=id)
     if theme.user.id != request.user.id:
         raise Http404
     edit_theme_form = forms.CreateThemeForm(request.POST or None, instance=theme)
@@ -32,7 +32,7 @@ def edit_theme(request, id):
         edit_theme_form.save()
         messages.success(request, "Update theme")
         return redirect("boards:list_themes")
-    return render(request, "boards/form_theme.html", context={
+    return render(request, "boards/edit_theme.html", context={
         "edit_theme_form": edit_theme_form,
         "id": id,
     })
