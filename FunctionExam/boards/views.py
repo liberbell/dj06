@@ -21,3 +21,6 @@ def list_themes(request):
     return render(request, "boards/list_themes.html", context={
         "themes": themes
     })
+
+def edit_theme(request, id):
+    pass
