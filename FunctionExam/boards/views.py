@@ -9,7 +9,7 @@ def create_theme(request):
     if create_theme_form.is_valid():
         create_theme_form.instance.user = request.user
         create_theme_form.save()
-        messages.success(request, "Board make successfully.")
+        messages.success(request, "Create Board successfully.")
 
         return redirect("boards:list_themes")
     return render(request, "boards/create_theme.html", context={
