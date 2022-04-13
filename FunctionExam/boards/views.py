@@ -1,4 +1,3 @@
-from venv import create
 from django.shortcuts import render, redirect, get_object_or_404
 from . import forms
 from django.contrib import messages
