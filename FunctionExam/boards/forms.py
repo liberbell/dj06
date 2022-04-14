@@ -9,4 +9,7 @@ class CreateThemeForm(forms.ModelForm):
         fields = ('title',)
 
 class DeleteThemeForm(forms.ModelForm):
-    pass
+    
+    class Meta:
+        model = Themes
+        fields = []
