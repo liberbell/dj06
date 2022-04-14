@@ -36,3 +36,9 @@ def edit_theme(request, id):
         "edit_theme_form": edit_theme_form,
         "id": id,
     })
+
+def delete_theme(request, id):
+    theme = get_object_or_404(Themes, id=id)
+    if theme.user.id != request.user.id:
+        raise Http404
+    delete_theme_form = forms.DeleteThemeForm(request.POST or None)
