@@ -45,3 +45,4 @@ def delete_theme(request, id):
     if delete_theme_form.is_valid():
         theme.delete()
         messages.success(request, "Delete successfully.")
+        return redirect("boards:list_themes")
