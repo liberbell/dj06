@@ -46,3 +46,6 @@ def delete_theme(request, id):
         theme.delete()
         messages.success(request, "Delete successfully.")
         return redirect("boards:list_themes")
+    return render(request, "boards/delete_theme.html", context={
+        "delete_theme_form": delete_theme_form,
+    })
