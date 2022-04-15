@@ -49,3 +49,6 @@ def delete_theme(request, id):
     return render(request, "boards/delete_theme.html", context={
         "delete_theme_form": delete_theme_form,
     })
+
+def post_comments(request, theme_id):
+    post_comment_form = forms.PostCommentForm(request.POST or None)
