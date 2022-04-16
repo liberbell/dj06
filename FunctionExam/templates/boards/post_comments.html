@@ -7,7 +7,7 @@
         <img width="50px" height="50px" src="{{ comment.user.picture.url }}">
     {% endif %}
     <p>Name: {{ comment.user.username }}</p>
-    <p>Comment: {{ comment.comment }}</p>
+    <p>Comment: {{ comment.comment | linebreaks }}</p>
 {% endfor %}
     <form method="POST">
         {% csrf_token %}
