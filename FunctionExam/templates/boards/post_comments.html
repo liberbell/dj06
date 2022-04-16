@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>Post comment</h3>
+<h3>{{ theme.title }}</h3>
+{% for comment in comments %}
+    {% if comment.user.picture %}
+        <img width="50px" height="50px" src="{{ comment.user.pictuire.url }}">
+    {% endif %}
+    <p>Name: {{ comment.user }}</p>
+{% endfor %}
     <form method="POST">
         {% csrf_token %}
         {{ post_comment_form.as_p }}
