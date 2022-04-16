@@ -6,7 +6,8 @@
     {% if comment.user.picture %}
         <img width="50px" height="50px" src="{{ comment.user.pictuire.url }}">
     {% endif %}
-    <p>Name: {{ comment.user }}</p>
+    <p>Name: {{ comment.user.username }}</p>
+    <p>Comment: {{ comment.comment }}</p>
 {% endfor %}
     <form method="POST">
         {% csrf_token %}
