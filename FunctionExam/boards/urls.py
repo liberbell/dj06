@@ -1,4 +1,5 @@
 from unicodedata import name
+from xml.dom.minidom import Document
 from django.urls import path
 from . import views
 from django.conf import settings
@@ -14,3 +15,6 @@ urlpatterns = [
     path("delete_theme/<int:id>", views.delete_theme, name="delete_theme"),
     path("post_comments/<int:theme_id>", views.post_comments, name="post_comments"),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
