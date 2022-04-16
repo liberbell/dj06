@@ -29,5 +29,7 @@ class Comments(models.Model):
     )
     theme = models.ForeignKey("Themes", on_delete=models.CASCADE)
 
+    objects = CommentsManager()
+
     class Meta:
         db_table = "comments"
