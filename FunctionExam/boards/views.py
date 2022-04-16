@@ -53,6 +53,7 @@ def delete_theme(request, id):
 def post_comments(request, theme_id):
     post_comment_form = forms.PostCommentForm(request.POST or None)
     theme = get_object_or_404(Themes, id=theme_id)
+    comments = Comments.objects.fetch_by_theme_id(theme_id)
 
     if post_comment_form.is_valid():
         post_comment_form.instance.theme = theme
