@@ -33,7 +33,7 @@
             var comment = $("#id_comment").val();
             $.ajax({
                 url: "{% url 'boards:save_comment' %}",
-                type: "GET";
+                type: "GET",
                 data: {comment: comment, theme_id: "{{ theme.id }}"},
                 dataType: "json",
                 success: function(json){
