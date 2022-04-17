@@ -12,6 +12,9 @@
         <p>Name: {{ comment.user.username }}</p>
         <p>Comment: {{ comment.comment | linebreaks }}</p>
     </div>
+    <div class="col-10 offset-1">
+    <hr>
+    </div>
 {% endfor %}
     <form method="POST">
         {% csrf_token %}
