@@ -16,9 +16,11 @@
     <hr>
     </div>
 {% endfor %}
+<div class="col-4 offset-7">
     <form method="POST">
         {% csrf_token %}
         {{ post_comment_form.as_p }}
         <input type="submit" value="comment send">
     </form>
+</div>
 {% endblock content %}
