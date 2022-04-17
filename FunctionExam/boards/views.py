@@ -4,6 +4,7 @@ from django.contrib import messages
 from .models import Themes, Comments
 from django.http import Http404
 from django.core.cache import cache
+from django.http import JsonResponse
 
 # Create your views here.
 def create_theme(request):
@@ -74,4 +75,5 @@ def save_comment(request):
         comment = request.GET.get("comment")
         theme_id = request.GET.get("theme_id")
         if comment and theme_id:
-            cache.set(f"saved_comment-theme_id={theme_id}-user_id{request.user.id}", comment)
+            cache.set(f"saved_comment-theme_id={theme_id}-user_id={request.user.id}", comment)
+            return JsonResponse("message": "save temporary successfully.")
