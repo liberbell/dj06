@@ -3,6 +3,7 @@ from . import forms
 from django.contrib import messages
 from .models import Themes, Comments
 from django.http import Http404
+from django.core.cache import cache
 
 # Create your views here.
 def create_theme(request):
@@ -72,3 +73,5 @@ def save_comment(request):
     if request.is_ajax:
         comment = request.GET.get("comment")
         theme_id = request.GET.get("theme_id")
+        if comment and theme_id:
+            cache.set(f"saved_comment-theme_id={theme_id}-user_id{request.user.id}", comment)
