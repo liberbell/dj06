@@ -30,7 +30,12 @@
 {% block javascript %}
     <script>
         $("#save_comment").click(function(){
-            var comment = $("#id_comment").val()
+            var comment = $("#id_comment").val();
+            $.ajax({
+                url: "{% url 'boards:save_comment' %}",
+                type: "GET";
+                data: {comment: comment, theme_id: "{{ theme.id }}"},
+            });
         });
     </script>
 {% endblock javascript %}
