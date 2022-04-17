@@ -16,6 +16,7 @@
     <hr>
     </div>
 {% endfor %}
+{% if user.is_authenticated %}
 <div class="col-4 offset-7">
     <form method="POST">
         {% csrf_token %}
@@ -23,4 +24,5 @@
         <input type="submit" value="comment send">
     </form>
 </div>
+{% endif %}
 {% endblock content %}
