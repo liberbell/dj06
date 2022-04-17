@@ -36,7 +36,7 @@
                 type: "GET";
                 data: {comment: comment, theme_id: "{{ theme.id }}"},
                 dataType: "json",
-                success: functiond(json){
+                success: function(json){
                     if(json.message){
                         alert(json.message);
                     }
