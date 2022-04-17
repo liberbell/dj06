@@ -67,3 +67,8 @@ def post_comments(request, theme_id):
         "theme": theme,
         "comments": comments,
     })
+
+def save_comment(request):
+    if request.is_ajax:
+        comment = request.GET.get("comment")
+        theme_id = request.GET.get("theme_id")
