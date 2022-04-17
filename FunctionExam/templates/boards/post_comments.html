@@ -27,3 +27,10 @@
 </div>
 {% endif %}
 {% endblock content %}
+{% block javascript %}
+    <script>
+        $("#save_comment").click(function(){
+            var comment = $("#id_comment").val()
+        });
+    </script>
+{% endblock javascript %}
