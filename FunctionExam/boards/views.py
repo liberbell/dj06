@@ -79,6 +79,3 @@ def save_comment(request):
         if comment and theme_id:
             cache.set(f"saved_comment-theme_id={theme_id}-user_id={request.user.id}", comment)
             return JsonResponse({"message": "save temporary successfully."})
-
-def show_error_page(request, exception):
-    return render(request, "404.html")
