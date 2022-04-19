@@ -6,7 +6,7 @@ class BaseModel(models.Model):
     update_at = models.DateTimeField()
 
     class Meta:
-        abstruct = True
+        abstract = True
 
 class Books(BaseModel):
     name = models.CharField(max_length=255)
