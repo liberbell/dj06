@@ -5,6 +5,8 @@ from django.views.generic.base import (
 )
 from . import forms
 from datetime import datetime
+from django.views.generic.detail import DetailView
+from .models import Books
 
 # Create your views here.
 class IndexView(View):
@@ -33,3 +35,7 @@ class HomeView(TemplateView):
         context["name"] = kwargs.get("name")
         context["time"] = datetime.now()
         return context
+
+class BookDetailView(DetailView):
+    model = Books
+    template_name = "book.html"
