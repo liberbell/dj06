@@ -6,6 +6,7 @@ from django.views.generic.base import (
 from . import forms
 from datetime import datetime
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from .models import Books
 
 # Create your views here.
@@ -45,3 +46,7 @@ class BookDetailView(DetailView):
         print(context)
         # context["form"] = forms.BookForm()
         return context
+
+class BookListView(ListView):
+    model = Books
+    template_name = "book_list.html"
