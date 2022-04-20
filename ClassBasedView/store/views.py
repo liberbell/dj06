@@ -39,3 +39,8 @@ class HomeView(TemplateView):
 class BookDetailView(DetailView):
     model = Books
     template_name = "book.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        print(context)
+        return context
