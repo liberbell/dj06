@@ -70,5 +70,5 @@ class BookCreateView(CreateView):
     def form_valid(self, form):
         form.instance.create_at = datetime.now()
         form.instance.update_at = datetime.now()
-        return super().form_valid(form)
+        return super(BookCreateView, self).form_valid(form)
 
