@@ -7,6 +7,9 @@ from . import forms
 from datetime import datetime
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.views.generic.edit import (
+    CreateView,
+)
 from .models import Books
 
 # Create your views here.
@@ -58,3 +61,7 @@ class BookListView(ListView):
         queryset = queryset.order_by("description")
         # print(queryset)
         return queryset
+
+class BookCreateView(CreateView):
+    model = Books
+    fields = ["name", "description"]
