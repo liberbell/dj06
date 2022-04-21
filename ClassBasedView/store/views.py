@@ -64,4 +64,7 @@ class BookListView(ListView):
 
 class BookCreateView(CreateView):
     model = Books
-    fields = ["name", "description"]
+    fields = ["name", "description", "price"]
+    template_name = "add_book.html"
+
+    
