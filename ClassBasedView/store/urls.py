@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import IndexView, HomeView, BookDetailView, BookListView
+from .views import IndexView, HomeView, BookDetailView, BookListView, BookCreateView
 # from django.views.generic.base import TemplateView
 
 app_name = "store"
@@ -11,4 +11,5 @@ urlpatterns = [
     path('detail_book/<int:pk>', BookDetailView.as_view(), name="detail_book"),
     path('book_list/', BookListView.as_view(), name="book_list"),
     path('book_list/<name>', BookListView.as_view(), name="book_list"),
+    path('add_book/', BookCreateView.as_view(), name="add_book"),
 ]
