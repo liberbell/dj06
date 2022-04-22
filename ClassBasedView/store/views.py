@@ -11,6 +11,7 @@ from django.views.generic.edit import (
     CreateView,
 )
 from .models import Books
+from django.urls import reverse_lazy
 
 # Create your views here.
 class IndexView(View):
@@ -66,6 +67,7 @@ class BookCreateView(CreateView):
     model = Books
     fields = ["name", "description", "price"]
     template_name = "add_book.html"
+    success_url = reverse_lazy("store:book_list")
 
     def form_valid(self, form):
         form.instance.create_at = datetime.now()
