@@ -73,3 +73,7 @@ class BookCreateView(CreateView):
         form.instance.update_at = datetime.now()
         return super(BookCreateView, self).form_valid(form)
 
+    def get_initial(self, **kwargs):
+        initial = super(BookCreateView).get_initial(**kwargs)
+        initial["name"] = "sample"
+        return initial
