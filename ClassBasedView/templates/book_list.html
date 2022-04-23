@@ -4,7 +4,8 @@
         <tr>
             <td>Name: <a href="{{ object.get_absolute_url }}"></a> {{ object.name }}</td>
             <td>Description: {{ object.description }}</td>
-            <td><a href="{% url 'store:update_book' %}">Update</a></td>
+            <td><a href="{% url 'store:edit_book' object.id %}">Update</a></td>
+            <td><a href="{% url 'store:delete_book' object.id %}">Delete</a></td>
         </tr>
         {% endfor %}
     </tbody>
