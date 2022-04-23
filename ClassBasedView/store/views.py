@@ -66,7 +66,7 @@ class BookCreateView(CreateView):
     model = Books
     fields = ["name", "description", "price"]
     template_name = "add_book.html"
-    success_url = reverse_lazy("store:book_list")
+    # success_url = reverse_lazy("store:book_list")
 
     def form_valid(self, form):
         form.instance.create_at = datetime.now()
