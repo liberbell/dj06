@@ -74,6 +74,6 @@ class BookCreateView(CreateView):
         return super(BookCreateView, self).form_valid(form)
 
     def get_initial(self, **kwargs):
-        initial = super(BookCreateView).get_initial(**kwargs)
+        initial = super(BookCreateView, self).get_initial(**kwargs)
         initial["name"] = "sample"
         return initial
