@@ -2,7 +2,7 @@
     <tbody>
         {% for object in object_list %}
         <tr>
-            <td>Name: {{ object.name }}</td>
+            <td>Name: <a href="{{ object.get_absolute_url }}"></a> {{ object.name }}</td>
             <td>Description: {{ object.description }}</td>
         </tr>
         {% endfor %}
