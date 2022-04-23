@@ -7,7 +7,7 @@ from datetime import datetime
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import (
-    CreateView,
+    CreateView, UpdateView, DeleteView
 )
 from .models import Books
 from django.urls import reverse_lazy
