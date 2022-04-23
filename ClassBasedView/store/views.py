@@ -77,3 +77,5 @@ class BookCreateView(CreateView):
         initial = super(BookCreateView, self).get_initial(**kwargs)
         initial["name"] = "sample"
         return initial
+
+class UpdateView(UpdateView):
