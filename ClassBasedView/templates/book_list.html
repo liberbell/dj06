@@ -1,6 +1,8 @@
-<ul>
-    {% for object in object_list %}
-        <li>Name: {{ object.name }}</li>
-        <li>Description: {{ object.description }}</li>
-    {% endfor %}
-</ul>
+<table>
+    <tbody>
+        {% for object in object_list %}
+            <li>Name: {{ object.name }}</li>
+            <li>Description: {{ object.description }}</li>
+        {% endfor %}
+    </tbody>
+</table>
