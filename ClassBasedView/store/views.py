@@ -84,5 +84,10 @@ class BookUpdateView(UpdateView):
     form_class = forms.BookUpdateForm
 
     def get_success_url(self):
-        print(self.object)
+        # print(self.object)
         return reverse_lazy("store:edit_book", kwargs={"pk": self.object.id})
+
+class BookdeleteView(DeleteView):
+    model = Books
+    template_name = "delete_book.html"
+    success_url = reverse_lazy("store:list_books")
