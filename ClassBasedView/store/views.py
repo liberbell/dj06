@@ -90,4 +90,4 @@ class BookUpdateView(UpdateView):
 class BookdeleteView(DeleteView):
     model = Books
     template_name = "delete_book.html"
-    success_url = reverse_lazy("store:list_books")
+    success_url = reverse_lazy("store:book_list")
