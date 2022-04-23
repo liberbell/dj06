@@ -78,4 +78,6 @@ class BookCreateView(CreateView):
         initial["name"] = "sample"
         return initial
 
-class UpdateView(UpdateView):
+class BookUpdateView(UpdateView):
+    template_name = "update_book.html"
+    a
