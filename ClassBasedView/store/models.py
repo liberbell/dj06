@@ -18,5 +18,5 @@ class Books(BaseModel):
         db_table = "books"
 
     def get_absolute_url(self):
-        return reverse_lazy("store:detail", kwargs={"pk": self.pk})
+        return reverse_lazy("store:detail_book", kwargs={"pk": self.pk})
     
