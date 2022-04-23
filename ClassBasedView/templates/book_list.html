@@ -1,8 +1,10 @@
 <table>
     <tbody>
         {% for object in object_list %}
-            <li>Name: {{ object.name }}</li>
-            <li>Description: {{ object.description }}</li>
+        <tr>
+            <td>Name: {{ object.name }}</td>
+            <td>Description: {{ object.description }}</td>
+        </tr>
         {% endfor %}
     </tbody>
 </table>
