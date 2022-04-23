@@ -7,7 +7,7 @@ from datetime import datetime
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import (
-    CreateView, UpdateView, DeleteView
+    CreateView, UpdateView, DeleteView, FormView
 )
 from .models import Books
 from django.urls import reverse_lazy
@@ -91,3 +91,6 @@ class BookdeleteView(DeleteView):
     model = Books
     template_name = "delete_book.html"
     success_url = reverse_lazy("store:book_list")
+
+class BookFormView(FormView):
+    model = Books
