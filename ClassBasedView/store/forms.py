@@ -22,7 +22,7 @@ class BookUpdateForm(forms.ModelForm):
         fields = ["name", "description", "price"]
 
     def save(self, *args, **kwargs):
-        obj = super(BookForm, self).save(commit=False)
+        obj = super(BookUpdateForm, self).save(commit=False)
         obj.update_at = datetime.now()
         obj.save()
         return obj
