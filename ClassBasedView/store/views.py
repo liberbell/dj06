@@ -1,4 +1,3 @@
-from random import sample
 from django.shortcuts import render
 from django.views.generic.base import (
     View, TemplateView, RedirectView
@@ -109,3 +108,6 @@ class BookFormView(FormView):
             form.save()
 
         return super(BookFormView, self).form_valid(form)
+
+class BookRedirectView(RedirectView):
+    url = "https://www.yahoo.co.jp"
