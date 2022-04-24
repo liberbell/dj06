@@ -1,3 +1,4 @@
+from random import sample
 from django.shortcuts import render
 from django.views.generic.base import (
     View, TemplateView
@@ -93,10 +94,15 @@ class BookdeleteView(DeleteView):
     success_url = reverse_lazy("store:book_list")
 
 class BookFormView(FormView):
-    model = Books
+    # model = Books
     template_name = "form_book.html"
     form_class = forms.BookForm
     success_url = reverse_lazy("store:book_list")
+
+    def get_initial(self):
+        initial = super(BookFormView, self).get_initial()
+        initial["name"] = f-sample
+        return initial
 
     def form_valid(self, form):
         if form.is_valid():
