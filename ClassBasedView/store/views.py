@@ -111,3 +111,8 @@ class BookFormView(FormView):
 
 class BookRedirectView(RedirectView):
     url = "https://www.yahoo.co.jp"
+
+    def get_redirect_url(self, *args, **kwargs):
+        book = Books.objects.first()
+        print(book)
+        return reverse_lazy("store:edit_book", kwargs={"pk": book.pk})
