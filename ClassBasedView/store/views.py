@@ -101,7 +101,7 @@ class BookFormView(FormView):
 
     def get_initial(self):
         initial = super(BookFormView, self).get_initial()
-        initial["name"] = f-sample
+        initial["name"] = "f-sample"
         return initial
 
     def form_valid(self, form):
