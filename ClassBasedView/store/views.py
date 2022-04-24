@@ -94,3 +94,6 @@ class BookdeleteView(DeleteView):
 
 class BookFormView(FormView):
     model = Books
+    template_name = "form_book.html"
+    form_class = forms.BookForm
+    success_url = reverse_lazy("store:book_list")
