@@ -1,14 +1,14 @@
 from random import sample
 from django.shortcuts import render
 from django.views.generic.base import (
-    View, TemplateView
+    View, TemplateView, RedirectView
 )
 from . import forms
 from datetime import datetime
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import (
-    CreateView, UpdateView, DeleteView, FormView
+    CreateView, UpdateView, DeleteView, FormView,
 )
 from .models import Books
 from django.urls import reverse_lazy
