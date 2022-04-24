@@ -97,3 +97,9 @@ class BookFormView(FormView):
     template_name = "form_book.html"
     form_class = forms.BookForm
     success_url = reverse_lazy("store:book_list")
+
+    def form_valid(self, form):
+        if form.is_valid():
+            form.save()
+
+        return super(BookFormView, self).form_valid(form)
