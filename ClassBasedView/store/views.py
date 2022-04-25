@@ -93,6 +93,10 @@ class BookUpdateView(SuccessMessageMixin, UpdateView):
         print(cleaned_data)
         return cleaned_data.get("name") + "update successfully."
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
 class BookdeleteView(DeleteView):
     model = Books
     template_name = "delete_book.html"
