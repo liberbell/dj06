@@ -95,6 +95,8 @@ class BookUpdateView(SuccessMessageMixin, UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        picture_form = forms.PictureUploadForm()
+        context["picture_form"] = picture_form
         return context
 
 class BookdeleteView(DeleteView):
