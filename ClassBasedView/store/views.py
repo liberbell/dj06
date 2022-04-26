@@ -100,6 +100,7 @@ class BookUpdateView(SuccessMessageMixin, UpdateView):
         return context
 
     def post(self, request, *args, **kwargs):
+        picture_form = forms.PictureUploadForm(request.POST or None, request.FILES or None)
 
         return super(BookUpdateView, self).post(request, *args, **kwargs)
 
