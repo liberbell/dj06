@@ -99,6 +99,10 @@ class BookUpdateView(SuccessMessageMixin, UpdateView):
         context["picture_form"] = picture_form
         return context
 
+    def post(self, request, *args, **kwargs):
+
+        return super(BookUpdateView, self).post(request, *args, **kwargs)
+
 class BookdeleteView(DeleteView):
     model = Books
     template_name = "delete_book.html"
