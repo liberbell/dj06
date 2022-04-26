@@ -33,3 +33,6 @@ class PictureUploadForm(forms.ModelForm):
     class Meta:
         model = Pictures
         fields = ["picture",]
+    
+    def save(self, *args, **kwargs):
+        obj = super(PictureUploadForm, self).save(commit=False)
