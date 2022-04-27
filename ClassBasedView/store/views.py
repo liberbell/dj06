@@ -13,6 +13,7 @@ from .models import Books, Pictures
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
+import os
 
 # Create your views here.
 class IndexView(View):
@@ -144,6 +145,9 @@ class BookRedirectView(RedirectView):
 def delete_picture(request, pk):
     picture = get_object_or_404(Pictures, pk=pk)
     picture.delete()
+    if os.path.isfile(picture.picture.path):
+        os.remove(picture.picture.path)
+
 
     messages.success(request, "Delete picture.")
     return redirect("store:edit_book", pk=picture.book.id)
