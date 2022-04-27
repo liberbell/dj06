@@ -97,6 +97,7 @@ class BookUpdateView(SuccessMessageMixin, UpdateView):
         context = super().get_context_data(**kwargs)
         picture_form = forms.PictureUploadForm()
         pictures = Pictures.objects.filter_by_book(book=self.object)
+        context["pictures"] = pictures
         context["picture_form"] = picture_form
         return context
 

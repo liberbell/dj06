@@ -7,6 +7,9 @@
     {% csrf_token %}
     {{ form.as_p }}
     <hr>
+    {% for picture in pictures %}
+        <img width="100px" height="100px" src="{{ picture.picture.url }}">
+    {% endfor %}
     {{ picture_form.as_p }}
     <input type="submit" value="update">
 </form>
