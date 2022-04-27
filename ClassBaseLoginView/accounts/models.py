@@ -9,3 +9,7 @@ class UserManager(BaseUserManager):
     def create_user(self, username, email, password=None):
         if not email:
             raise ValueError("Enter email.")
+        user = self.model(
+            username=username,
+            email=email,
+        )
