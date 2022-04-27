@@ -30,3 +30,5 @@ class Pictures(BaseModel):
     book = models.ForeignKey(
         "books", on_delete=models.CASCADE
     )
+    
+    objects = PicturesManager()
