@@ -8,7 +8,7 @@
     {{ form.as_p }}
     <hr>
     {% for picture in pictures %}
-        <img width="100px" height="100px" src="{{ picture.picture.url }}">
+        <a href="{% url "store:delete_picture" pk=picture.id %}"><img width="100px" height="100px" src="{{ picture.picture.url }}"></a>
     {% endfor %}
     {{ picture_form.as_p }}
     <input type="submit" value="update">
