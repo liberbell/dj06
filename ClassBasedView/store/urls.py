@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import IndexView, HomeView, BookDetailView, BookListView, BookCreateView, BookUpdateView, BookdeleteView, BookFormView, BookRedirectView
+from .views import IndexView, HomeView, BookDetailView, BookListView, BookCreateView, BookUpdateView, BookdeleteView, BookFormView, BookRedirectView, delete_picture
 # from django.views.generic.base import TemplateView
 from django.views.generic.base import RedirectView
 
@@ -19,4 +19,5 @@ urlpatterns = [
     path('google/', RedirectView.as_view(url="https://google.com")),
     path('book_redirect/', BookRedirectView.as_view(), name="book_redirect"),
     path('book_redirect/<int:pk>', BookRedirectView.as_view(), name="book_redirect"),
+    path('delete_picture<int:pk>', delete_picture, name="delete_picture"),
 ]
