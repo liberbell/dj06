@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.base import (
     View, TemplateView, RedirectView
 )
@@ -139,3 +139,9 @@ class BookRedirectView(RedirectView):
         if "pk" in kwargs:
             return reverse_lazy("store:detail_book", kwargs={"pk": kwargs["pk"]})
         return reverse_lazy("store:edit_book", kwargs={"pk": book.pk})
+
+def delete_picture(request, pk):
+    picture = get_object_or_404(Pictures, pk=pk)
+    picture.delete()
+
+    messages.success(request, "Delete picture.")
