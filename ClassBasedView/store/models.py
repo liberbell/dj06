@@ -34,3 +34,9 @@ class Pictures(BaseModel):
     )
 
     objects = PicturesManager()
+
+@receiver(models.signals.post_delete, sender=Pictures)
+def delete_picture(sender, instance, **kwargs):
+    if instance.picture:
+        if os.path.isfile(instance.picture.path):
+            os.remove(instance.picture.path)
