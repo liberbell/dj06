@@ -145,8 +145,8 @@ class BookRedirectView(RedirectView):
 def delete_picture(request, pk):
     picture = get_object_or_404(Pictures, pk=pk)
     picture.delete()
-    if os.path.isfile(picture.picture.path):
-        os.remove(picture.picture.path)
+    # if os.path.isfile(picture.picture.path):
+    #     os.remove(picture.picture.path)
 
 
     messages.success(request, "Delete picture.")
