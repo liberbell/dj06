@@ -12,6 +12,7 @@ from django.views.generic.edit import (
 from .models import Books, Pictures
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib import messages
 
 # Create your views here.
 class IndexView(View):
@@ -145,3 +146,4 @@ def delete_picture(request, pk):
     picture.delete()
 
     messages.success(request, "Delete picture.")
+    return redirect("store:edit_book", pk=picture.book.id)
