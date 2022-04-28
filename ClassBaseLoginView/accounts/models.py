@@ -15,3 +15,8 @@ class UserManager(BaseUserManager):
         )
         user.set_password(password)
         user.save(using=self._db)
+        return user
+
+class Users(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(max_length=150)
+    email = models.EmailField(max_length=150, unique=True)
