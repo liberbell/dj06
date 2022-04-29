@@ -14,5 +14,5 @@ class RegistUserView(CreateView):
 class UserLoginView(FormView):
     pass
 
-class LogoutView(View):
+class UserLogoutView(View):
     pass
