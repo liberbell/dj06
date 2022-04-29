@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.views.generic.base import TemplateView
+from .forms import RegistForm
 
 # Create your views here.
 class HomeView(TemplateView):
