@@ -12,3 +12,6 @@ class RegistForm(forms.ModelForm):
     class Meta:
         model = Users
         fields = ["username", "age", "email", "password"]
+
+    def save(self, commit=False):
+        user = super().save(commit=False)
