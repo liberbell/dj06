@@ -9,7 +9,7 @@ class HomeView(TemplateView):
 
 class RegistUserView(CreateView):
     template_name = "regist.html"
-    form_class = RegistForm()
+    form_class = RegistForm
 
 class UserLoginView(FormView):
     pass
