@@ -8,3 +8,4 @@ class HomeView(TemplateView):
 
 class RegistUserView(CreateView):
     template_name = "regist.html"
+    form_class = RegistForm()
