@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
-from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView, FormView
+from django.views.generic.base import TemplateView, View
 from .forms import RegistForm
 
 # Create your views here.
@@ -10,3 +10,9 @@ class HomeView(TemplateView):
 class RegistUserView(CreateView):
     template_name = "regist.html"
     form_class = RegistForm()
+
+class UserLoginView(FormView):
+    pass
+
+class LogoutView(View):
+    pass
