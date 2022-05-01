@@ -6,12 +6,12 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a href="{% url "accounts:home" %}" class="navbar-brand">Home</a>
+            <a class="navbar-brand" href="{% url "accounts:home" %}">Home</a>
             {% if user.is_authenticated %}
-                <a href="{% url "accounts:user_logout" %}" class="navbar-brand">Logout</a>
+                <a class="navbar-brand" href="{% url "accounts:user_logout" %}">Logout</a>
             {% else %}
-                <a href="{% url "accounts:user_login" %}" class="navbar-brand">Login</a>
-                <a href="{% url "accounts:regist" %}" class="navbar-brand">User Regist</a>
+                <a class="navbar-brand" href="{% url "accounts:user_login" %}">Login</a>
+                <a class="navbar-brand" href="{% url "accounts:regist" %}">User Regist</a>
             {% endif %}
         </nav>
         {% block content %}
