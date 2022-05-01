@@ -17,10 +17,13 @@ class UserLoginView(FormView):
     template_name = "user_login.html"
     form_class = UserLoginForm
 
-    def post(self, request *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         email = request.POST["email"]
         password = request.POST["password"]
-        user = 
+        user = authenticate(email=email, password=password)
+        if user is not None and user.is_active:
+            login(request, user)
+        return redirect("accounts:home")
 
 class UserLogoutView(View):
     pass
