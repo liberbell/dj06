@@ -12,7 +12,8 @@ class RegistUserView(CreateView):
     form_class = RegistForm
 
 class UserLoginView(FormView):
-    pass
+    template_name = "user_login.html"
+    form_class = UserLoginForm
 
 class UserLogoutView(View):
     pass
