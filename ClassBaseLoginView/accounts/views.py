@@ -33,5 +33,9 @@ class UserLogoutView(View):
         logout(request)
         return redirect("accounts:user_login")
 
+
 class UserView(TemplateView):
     template_name = "user.html"
+
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
