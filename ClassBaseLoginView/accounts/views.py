@@ -29,3 +29,6 @@ class UserLogoutView(View):
     def get(self, request, *args, **kwargs):
         logout(request)
         return redirect("accounts:user_login")
+
+class UserView(TemplateView):
+    template_name = "user.html"
