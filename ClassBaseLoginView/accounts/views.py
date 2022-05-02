@@ -3,6 +3,9 @@ from django.views.generic.edit import CreateView, FormView
 from django.views.generic.base import TemplateView, View
 from .forms import RegistForm, UserLoginForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class HomeView(TemplateView):
