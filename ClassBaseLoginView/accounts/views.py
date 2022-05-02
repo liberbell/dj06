@@ -25,4 +25,7 @@ class UserLoginView(FormView):
         return redirect("accounts:home")
 
 class UserLogoutView(View):
-    pass
+    
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return redirect("accounts:user_login")
