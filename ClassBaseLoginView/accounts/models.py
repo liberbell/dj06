@@ -24,9 +24,9 @@ class Users(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELD = ["username"]
+    REQUIRED_FIELDS = ["username"]
 
-    objects = UserManager
+    objects = UserManager()
 
     def get_absolute_url(self):
         return reverse_lazy("accounts:home")
