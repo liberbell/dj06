@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
             raise ValueError("Enter email.")
         user = self.model(
             username=username,
-            email=email,
+            email=email
         )
         user.set_password(password)
         user.save(using=self._db)
@@ -21,7 +21,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=150)
     email = models.EmailField(max_length=150, unique=True)
     is_active = models.BooleanField(default=True)
-    is_stafe = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELD = ["username"]
