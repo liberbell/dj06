@@ -23,8 +23,11 @@ class UserLoginView(FormView):
         email = request.POST["email"]
         password = request.POST["password"]
         user = authenticate(email=email, password=password)
+        next_url = request.POST["next"]
         if user is not None and user.is_active:
             login(request, user)
+        if next_url:
+            return redirect(next_url)
         return redirect("accounts:home")
 
 class UserLogoutView(View):
