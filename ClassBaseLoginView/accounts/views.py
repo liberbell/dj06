@@ -33,8 +33,8 @@ class UserLogoutView(View):
         logout(request)
         return redirect("accounts:user_login")
 
-@method_decorator(login_required, name="dispatch")
-class UserView(TemplateView):
+# @method_decorator(login_required, name="dispatch")
+class UserView(LoginRequiredMixin, TemplateView):
     template_name = "user.html"
 
     # @method_decorator(login_required)
