@@ -1,6 +1,7 @@
 from django import forms
 from .models import Users
 from django.contrib.auth.password_validation import validate_password
+from django.contrib.auth.forms import AuthenticationForm
 
 class RegistForm(forms.ModelForm):
     username = forms.CharField(label="Name")
@@ -19,6 +20,10 @@ class RegistForm(forms.ModelForm):
         user.save()
         return user
 
-class UserLoginForm(forms.Form):
-    email = forms.EmailField(label="E-mail")
+# class UserLoginForm(forms.Form):
+#     email = forms.EmailField(label="E-mail")
+#     password = forms.CharField(label="Password", widget=forms.PasswordInput())
+
+class UserLoginForm(AuthenticationForm):
+    username = forms.EmailField(label="E-mail")
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
