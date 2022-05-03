@@ -35,11 +35,14 @@ class UserLoginView(LoginView):
     template_name = "user_login.html"
     authentication_form = UserLoginForm
 
-class UserLogoutView(View):
+# class UserLogoutView(View):
     
-    def get(self, request, *args, **kwargs):
-        logout(request)
-        return redirect("accounts:user_login")
+#     def get(self, request, *args, **kwargs):
+#         logout(request)
+#         return redirect("accounts:user_login")
+
+class UserLogoutView(LogoutView):
+    pass
 
 # @method_decorator(login_required, name="dispatch")
 class UserView(LoginRequiredMixin, TemplateView):
