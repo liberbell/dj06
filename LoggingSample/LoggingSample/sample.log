@@ -1,4 +1,9 @@
-2022-05-04 10:49:35,509-62688-WARNING- warning.log
-2022-05-04 10:49:35,509-62688-ERROR- error.log
-2022-05-04 10:49:35,509-62688-CRITICAL- critical.log
-2022-05-04 10:49:35,509-62688-ERROR- user = Bob raised error
+2022-05-04 10:51:40,583-62804-WARNING- warning.log
+2022-05-04 10:51:40,584-62804-ERROR- error.log
+2022-05-04 10:51:40,584-62804-CRITICAL- critical.log
+2022-05-04 10:51:40,584-62804-ERROR- user = Bob raised error
+2022-05-04 10:51:40,584-62804-ERROR- division by zero
+Traceback (most recent call last):
+  File "01_sample_logging.py", line 21, in <module>
+    c = a / b
+ZeroDivisionError: division by zero

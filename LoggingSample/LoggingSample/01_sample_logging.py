@@ -20,4 +20,4 @@ b = 0
 try:
     c = a / b
 except Exception as e:
-    logging.error(e)
+    logging.error(e, exc_info=True)
