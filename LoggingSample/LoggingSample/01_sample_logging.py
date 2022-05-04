@@ -11,3 +11,6 @@ logging.info("info.log")
 logging.warning("warning.log")
 logging.error("error.log")
 logging.critical("critical.log")
+
+user = "Bob"
+logging.error(f"user = {user} raised error")
