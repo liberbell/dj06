@@ -37,6 +37,8 @@ class UserLoginView(LoginView):
     
     def form_valid(self, form):
         remember = form.cleaned_data["remember"]
+        if remember:
+            self.request.session.set_expiry(15)
         return super().form_valid(form)
 
 # class UserLogoutView(View):
