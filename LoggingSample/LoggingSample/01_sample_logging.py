@@ -14,3 +14,10 @@ logging.critical("critical.log")
 
 user = "Bob"
 logging.error(f"user = {user} raised error")
+
+a = 10
+b = 0
+try:
+    c = a / b
+except Exception as e:
+    logging.error(e)
