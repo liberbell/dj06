@@ -34,6 +34,10 @@ class RegistUserView(CreateView):
 class UserLoginView(LoginView):
     template_name = "user_login.html"
     authentication_form = UserLoginForm
+    
+    def form_valid(self, form):
+        remember = form.cleaned_data["remember"]
+        return super().form_valid(form)
 
 # class UserLogoutView(View):
     
