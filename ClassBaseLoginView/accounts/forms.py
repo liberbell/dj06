@@ -27,4 +27,4 @@ class RegistForm(forms.ModelForm):
 class UserLoginForm(AuthenticationForm):
     username = forms.EmailField(label="E-mail")
     password = forms.CharField(label="Password", widget=forms.PasswordInput())
-    remember = forms.BooleanField(label="keep login")
+    remember = forms.BooleanField(label="keep login", required=False)
