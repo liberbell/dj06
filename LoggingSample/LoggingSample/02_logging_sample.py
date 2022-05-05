@@ -25,3 +25,11 @@ logger.info("info log")
 logger.warning("warning log")
 logger.error("error log")
 logger.critical("critical log")
+
+a = 10
+b = 0
+try:
+    c = a / b
+except Exception as e:
+    logger.error(e, exc_info=True)
+
