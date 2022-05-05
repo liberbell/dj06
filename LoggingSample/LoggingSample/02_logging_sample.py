@@ -9,7 +9,7 @@ s_handler = logging.StreamHandler()
 f_handler = logging.FileHandler("sample2.log", encoding="utf-8")
 
 s_handler.setLevel(logging.DEBUG)
-f_handler.setLevel(logging.error)
+f_handler.setLevel(logging.ERROR)
 
 s_formatter = logging.Formatter("%(name)s-%(levelname)s-%(message)s")
 f_formatter = logging.Formatter("%(asctime)s-%(name)s-%(levelname)s-%(message)s")
