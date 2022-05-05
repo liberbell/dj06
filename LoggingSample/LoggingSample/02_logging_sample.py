@@ -8,6 +8,9 @@ logger.setLevel(logging.DEBUG)
 s_handler = logging.StreamHandler()
 f_handler = logging.FileHandler("sample2.log", encoding="utf-8")
 
+s_handler.setLevel(logging.DEBUG)
+f_handler.setLevel(logging.error)
+
 logger.debug("debug log")
 logger.info("info log")
 logger.warning("warning log")
