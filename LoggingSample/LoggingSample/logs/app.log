@@ -8,3 +8,7 @@
 2022-05-06 08:50:41,239-samplelogger-ERROR-error log
 2022-05-06 08:50:41,239-samplelogger-CRITICAL-critical log
 2022-05-06 08:50:41,239-samplelogger-CRITICAL-critical log
+2022-05-06 08:51:24,960-__main__-ERROR-error log
+2022-05-06 08:51:24,960-__main__-CRITICAL-critical log
+2022-05-06 08:51:24,960-samplelogger-ERROR-error log
+2022-05-06 08:51:24,960-samplelogger-CRITICAL-critical log
