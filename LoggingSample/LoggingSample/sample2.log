@@ -1,2 +1,9 @@
 2022-05-05 17:52:52,584-__main__-ERROR-error log
 2022-05-05 17:52:52,584-__main__-CRITICAL-critical log
+2022-05-05 17:57:12,092-__main__-ERROR-error log
+2022-05-05 17:57:12,092-__main__-CRITICAL-critical log
+2022-05-05 17:57:12,092-__main__-ERROR-division by zero
+Traceback (most recent call last):
+  File "02_logging_sample.py", line 32, in <module>
+    c = a / b
+ZeroDivisionError: division by zero
