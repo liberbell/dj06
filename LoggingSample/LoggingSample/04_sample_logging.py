@@ -17,3 +17,11 @@ t_handler=logging.handlers.TimedRotatingFileHandler(
     backupCount=5,
     encoding="utf-8"
 )
+
+logger.setLevel(logging.DEBUG)
+sample_formatter = logging.Formatter("%(name)s-%(asctime)s-%(levelname)s-%(message)s")
+r_handler.setFormatter(sample_formatter)
+t_handler.setFormatter(sample_formatter)
+
+logger.addHandler(r_handler)
+logger.addHandler(t_handler)
