@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+from logging import handlers
 from pathlib import Path
 import os
 
@@ -136,6 +137,13 @@ LOGGING = {
     "formatters": {
         "simple": {
             "format": "%(asctime)s %(levelname)s [%(pathname)s:%(lineno)s] %(message)s",
+        }
+    },
+    "handlers": {
+        "console_handler": {
+            "level": DEBUG,
+            "class": "logging.StreamHandler",
+            "formatter": "simepl",
         }
     }
 }
