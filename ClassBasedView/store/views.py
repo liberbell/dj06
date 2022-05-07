@@ -13,7 +13,9 @@ from .models import Books, Pictures
 from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-import os
+import logging
+
+application_logger = logging.getLogger("application_logger")
 
 # Create your views here.
 class IndexView(View):
