@@ -40,7 +40,8 @@ class HomeView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(kwargs)
+        application_logger.debug("dispaly home page.")
+        # print(kwargs)
         context["name"] = kwargs.get("name")
         context["time"] = datetime.now()
         return context
@@ -51,7 +52,6 @@ class BookDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        application_logger.debug("dispaly home page.")
         # print(context)
         # context["form"] = forms.BookForm()
         return context
