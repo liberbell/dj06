@@ -133,4 +133,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LOGGING = {
     "version":1,
     "disable_existing_loggers": False,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s %(levelname)s [%(pathname)s:%(lineno)s] %(message)s",
+        }
+    }
 }
