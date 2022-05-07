@@ -143,7 +143,14 @@ LOGGING = {
         "console_handler": {
             "level": DEBUG,
             "class": "logging.StreamHandler",
-            "formatter": "simepl",
+            "formatter": "simple",
+        }
+    },
+    "loggers": {
+        "application_logger": {
+            "handlers": ["console_handler",],
+            "level": DEBUG,
+            "propagate": False,
         }
     }
 }
