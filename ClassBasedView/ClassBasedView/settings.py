@@ -158,7 +158,7 @@ LOGGING = {
         }
     },
     "loggers": {
-        "application_logger": {
+        "application-logger": {
             "handlers": ["console_handler", "timed_file_handler"],
             "level": "DEBUG",
             "propagate": False,
