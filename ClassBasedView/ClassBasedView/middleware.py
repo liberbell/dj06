@@ -17,4 +17,8 @@ class MyMiddleWare(MiddlewareMixin):
 class PerformanceMiddleWare(MiddlewareMixin):
 
     def process_view(self, request, view_func, view_args, view_kwargs):
+        start_time = time.time()
+        request.start_time = start_time
 
+    def process_template_response(self, request, response):
+        response_time = time.time() - request.start_time
