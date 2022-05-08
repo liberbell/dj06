@@ -7,6 +7,5 @@ class MyMiddleWare(MiddlewareMixin):
     
     def process_view(self, request, view_func, view_args, view_kwargs):
         application_logger.info(request.get_full_path())
-        print(dir(request))
+        # print(dir(request))
 
-        
