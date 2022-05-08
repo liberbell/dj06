@@ -14,6 +14,7 @@ from django.urls import reverse_lazy
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 import logging
+from django.http import Http404
 
 application_logger = logging.getLogger("application-logger")
 
@@ -42,6 +43,8 @@ class HomeView(TemplateView):
         context = super().get_context_data(**kwargs)
         application_logger.debug("dispaly home page.")
         # print(kwargs)
+        if kwargs.get("name") == "alex":
+            raise Http404("This name is invalid.")
         context["name"] = kwargs.get("name")
         context["time"] = datetime.now()
         return context
