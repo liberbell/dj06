@@ -11,4 +11,4 @@ class MyMiddleWare(MiddlewareMixin):
         # print(dir(request))
 
     def process_exception(self, request, exception):
-        error_logger.error(exception, )
+        error_logger.error(exception, exc_info=True)
