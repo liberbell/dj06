@@ -154,11 +154,12 @@ LOGGING = {
             "backupCount": 10,
             "formatter": "simple",
             "encording": "utf-8",
+            "delay": True,
         }
     },
     "loggers": {
         "application_logger": {
-            "handlers": ["console_handler",],
+            "handlers": ["console_handler", timed_file_handler],
             "level": "DEBUG",
             "propagate": False,
         }
