@@ -1,1 +1,2 @@
-2022-05-08 14:24:34,349 INFO [/Users/hideakiehara/virtualenv/dj06/ClassBasedView/store/models.py:46] delete /Users/hideakiehara/virtualenv/dj06/ClassBasedView/media/picture/aircraft-2795557_640_Wbp4PVj.jpg.
+2022-05-09 08:36:09,578 INFO [/Users/hideakiehara/virtualenv/dj06/ClassBasedView/ClassBasedView/middleware.py:9] /store/home/bob
+2022-05-09 08:36:11,089 INFO [/Users/hideakiehara/virtualenv/dj06/ClassBasedView/ClassBasedView/middleware.py:9] /store/book_list/
