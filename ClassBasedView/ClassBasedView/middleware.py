@@ -1,5 +1,6 @@
 import logging
 from django.utils.deprecation import MiddlewareMixin
+import time
 
 application_logger = logging.getLogger("application-logger")
 error_logger = logging.getLogger("error-logger")
@@ -12,3 +13,8 @@ class MyMiddleWare(MiddlewareMixin):
 
     def process_exception(self, request, exception):
         error_logger.error(exception, exc_info=True)
+
+class PerformanceMiddleWare(MiddlewareMixin):
+
+    def process_view(self, request, view_func, view_args, view_kwargs):
+
