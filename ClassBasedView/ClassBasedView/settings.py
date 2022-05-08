@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'class_based_view.middleware.MyMiddleWare',
 ]
 
 ROOT_URLCONF = 'ClassBasedView.urls'
