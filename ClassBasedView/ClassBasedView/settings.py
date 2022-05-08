@@ -153,13 +153,13 @@ LOGGING = {
             "interval": 10,
             "backupCount": 10,
             "formatter": "simple",
-            "encording": "utf-8",
+            "encoding": "utf-8",
             "delay": True,
         }
     },
     "loggers": {
         "application_logger": {
-            "handlers": ["console_handler", timed_file_handler],
+            "handlers": ["console_handler", "timed_file_handler"],
             "level": "DEBUG",
             "propagate": False,
         }
