@@ -17,6 +17,7 @@ import logging
 from django.http import Http404
 
 application_logger = logging.getLogger("application-logger")
+error_logger = logging.getLogger("error-logger")
 
 # Create your views here.
 class IndexView(View):
@@ -44,6 +45,7 @@ class HomeView(TemplateView):
         application_logger.debug("dispaly home page.")
         # print(kwargs)
         if kwargs.get("name") == "alex":
+            error_logger.error("This name is not available.")
             raise Http404("This name is invalid.")
         context["name"] = kwargs.get("name")
         context["time"] = datetime.now()
