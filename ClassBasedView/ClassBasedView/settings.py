@@ -149,7 +149,7 @@ LOGGING = {
     "loggers": {
         "application_logger": {
             "handlers": ["console_handler",],
-            "level": "DEBUG",
+            "level": "INFO",
             "propagate": False,
         }
     }
