@@ -4,7 +4,7 @@ from django.dispatch import receiver
 import os
 import logging
 
-application_logger = logging.getLogger("applicatin-logger")
+application_logger = logging.getLogger("application-logger")
 
 # Create your models here.
 class BaseModel(models.Model):
