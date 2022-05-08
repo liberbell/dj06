@@ -15,7 +15,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
 import logging
 
-application_logger = logging.getLogger("application_logger")
+application_logger = logging.getLogger("application-logger")
 
 # Create your views here.
 class IndexView(View):
