@@ -168,6 +168,17 @@ LOGGING = {
             "encoding": "utf-8",
             "delay": True,
         },
+            "timed_performance_handler": {
+            "level": "INFO",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": os.path.join("logs", "application_performance.log"),
+            "when": "S",
+            "interval": 10,
+            "backupCount": 10,
+            "formatter": "simple",
+            "encoding": "utf-8",
+            "delay": True,
+        },
     },
     "loggers": {
         "application-logger": {
@@ -178,6 +189,11 @@ LOGGING = {
         "error-logger": {
             "handlers": ["timed_error_handler"],
             "level": "ERROR",
+            "propagate": False,
+        },
+        "performance-logger": {
+            "handlers": ["timed_performance_handler"],
+            "level": "INFO",
             "propagate": False,
         }
     }
