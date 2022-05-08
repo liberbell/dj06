@@ -155,7 +155,18 @@ LOGGING = {
             "formatter": "simple",
             "encoding": "utf-8",
             "delay": True,
-        }
+        },
+            "timed_error_handler": {
+            "level": "ERROR",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": os.path.join("logs", "application_error.log"),
+            "when": "S",
+            "interval": 10,
+            "backupCount": 10,
+            "formatter": "simple",
+            "encoding": "utf-8",
+            "delay": True,
+        },
     },
     "loggers": {
         "application-logger": {
