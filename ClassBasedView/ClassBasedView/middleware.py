@@ -23,6 +23,6 @@ class PerformanceMiddleWare(MiddlewareMixin):
 
     def process_template_response(self, request, response):
         response_time = time.time() - request.start_time
-        performance_logger.info(f"{request.get_full_path()}: {response_time}ms")
+        performance_logger.info(f"{request.get_full_path()}: {response_time}s")
 
         return response

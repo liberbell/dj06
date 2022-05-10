@@ -1,1 +1,1 @@
-2022-05-10 09:06:33,817 INFO [/Users/hideakiehara/virtualenv/dj06/ClassBasedView/ClassBasedView/middleware.py:26] /store/book_list/: 0.02809906005859375ms
+2022-05-10 09:07:24,557 INFO [/Users/hideakiehara/virtualenv/dj06/ClassBasedView/ClassBasedView/middleware.py:26] /store/detail_book/6: 0.0062448978424072266s
