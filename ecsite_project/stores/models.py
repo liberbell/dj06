@@ -30,3 +30,12 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+
+class ProductPictures(models.Model):
+    picture = models.FileField(upload_to="product_pictures/")
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    orders = models.IntegerField()
+
+    class Meta:
+        db_table = "product_pictures"
+        ordering = ["order"]
