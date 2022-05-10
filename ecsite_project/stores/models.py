@@ -18,3 +18,9 @@ class Manufacturers(models.Model):
 
     def __str__(self):
         return self.name
+
+class Products(models.Model):
+    name = models.CharField(max_length=1000)
+    price = models.IntegerField()
+    stock = models.IntegerField()
+    product_type = models.ForeignKey(ProductTypes, on_delete=models.CASCADE)
