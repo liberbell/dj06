@@ -24,6 +24,7 @@ class Products(models.Model):
     price = models.IntegerField()
     stock = models.IntegerField()
     product_type = models.ForeignKey(ProductTypes, on_delete=models.CASCADE)
+    manufacturer = models.ForeignKey(Manufacturers, on_delete=models.CASCADE)
 
     class Meta:
         db_table = "products"
