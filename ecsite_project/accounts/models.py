@@ -17,7 +17,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, username, email, passsword=None):
+    def create_superuser(self, username, email, password=None):
         user = self.model(
             username = username,
             email = email,
