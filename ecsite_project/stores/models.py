@@ -9,3 +9,12 @@ class ProductTypes(models.Model):
 
     def __str__(self):
         return self.name
+
+class Manufacturers(models.Model):
+    name = models.CharField(max_length=1000)
+
+    class Meta:
+        db_table = "manufacturers"
+
+    def __str__(self):
+        return self.name
