@@ -23,8 +23,9 @@ class UserManager(BaseUserManager):
             email = email,
         )
         user.set_password(password)
-        user.is_staff(True)
-        user.is_active(True)
+        user.is_staff = True
+        user.is_active = True
+        user.is_superuser = True
 
 
 class Users(AbstractBaseUser, PermissionsMixin):
