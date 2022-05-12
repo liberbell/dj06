@@ -21,13 +21,13 @@ class UserManager(BaseUserManager):
         user = self.model(
             username = username,
             email = email,
-            user.set_password(password)
-            user.is_staff = True
-            user.is_active = True
-            user.is_supersuer = True
-            user.save(using=self._db)
-            return user
         )
+        user.set_password(password)
+        user.is_staff = True
+        user.is_active = True
+        user.is_supersuer = True
+        user.save(using=self._db)
+        return user
 
 
 class Users(AbstractBaseUser, PermissionsMixin):
