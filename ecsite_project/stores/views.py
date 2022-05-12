@@ -9,3 +9,4 @@ from .models import (
 # Create your views here.
 class ProductListView(LoginRequiredMixin, ListView):
     model = Products
+    template_name = os.path.join("stores", "product_list.html")
