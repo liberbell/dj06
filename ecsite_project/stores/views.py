@@ -10,3 +10,8 @@ from .models import (
 class ProductListView(LoginRequiredMixin, ListView):
     model = Products
     template_name = os.path.join("stores", "product_list.html")
+
+    def get_queryset(self):
+        query = super().get_queryset()
+        product_type_name = self.request.GET.get("product_type_name", None)
+        return super().get_queryset()
