@@ -16,7 +16,11 @@
         <tbody>
             {% for product in object.list %}
             <tr>
-                <td>{{ product.product_type.name }}</td>
+                <td>Type:{{ product.product_type.name }}</td>
+                <td>Name:{{ product.name }}</td>
+                <td>$:{{ product.peice }}</td>
+                <td>Stock:{{ product.stock }}</td>
+                <td>Manufacturer:{{ product.manufacturer }}</td>
             </tr>
             {% endfor %}
         </tbody>
