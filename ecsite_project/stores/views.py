@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -19,3 +20,8 @@ class ProductListView(LoginRequiredMixin, ListView):
                 product_type__name = product_type_name
             )
         return query
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["product_type_name"] = self.request.GET.get("product_type_name", None)
+        return context
