@@ -20,9 +20,9 @@ class ProductListView(LoginRequiredMixin, ListView):
             query = query.filter(
                 product_type__name = product_type_name
             )
-        elif product_name:
+        if product_name:
             query = query.filter(
-                product__name = product_name
+                name = product_name
             )
         return query
 
