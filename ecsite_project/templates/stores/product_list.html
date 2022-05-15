@@ -6,6 +6,10 @@
     <form action="{% url "stores:product_list" %}" method="GET">
         <p>Product Type: <input type="text" name="product_type_name" value={{ product_type_name }}></p>
         <p>Product Name: <input type="text" name="product_name" value={{ product_name }}></p>
+        <p>Price Sort
+            Up <input type="radio" name="order_by_price" value="1">
+            Down <input type="radio" name="order_by_price" value="2">
+        </p>
         <p><input type="submit" value="Apply"></p>
     </form>
     <table class="table table-striped table-bordered">
