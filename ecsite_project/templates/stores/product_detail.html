@@ -7,6 +7,11 @@
             <img width="200px" height="200px" src="{{ picture.picture }}">
         {% endfor %}
     </div>
+    <div>
+        <p>Product Name: {{ object.name }}</p>
+        <p>Product Price: {{ object.price }}</p>
+        <p>Product Stock: {{ object.stock }}</p>
+    </div>
 </div>
 
 {% endblock content %}
