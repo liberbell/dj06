@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <td>Types</td>
-                <td><a href="{% url 'stores:product_detail' pk=product.id %}">{{ product.name }}</a></td>
+                <td>Product Name</td>
                 <td>Price</td>
                 <td>Stock</td>
                 <td>Manufacturer</td>
@@ -26,7 +26,7 @@
             {% for product in object_list %}
             <tr>
                 <td>{{ product.product_type.name }}</td>
-                <td>{{ product.name }}</td>
+                <td><a href="{% url 'stores:product_detail' pk=product.id %}">{{ product.name }}</a></td>
                 <td>${{ product.price }}</td>
                 <td>{{ product.stock }}</td>
                 <td>{{ product.manufacturer }}</td>
