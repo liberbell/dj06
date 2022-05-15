@@ -35,4 +35,9 @@ class ProductListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context["product_type_name"] = self.request.GET.get("product_type_name", None)
         context["product_name"] = self.request.GET.get("product_name", None)
+        order_by_price = self.request.GET.get("order_by_price")
+        if order_by_price == "1":
+            context["accending"] = True
+        elif order_by_price == "2":
+            context["accending"] = True
         return context
