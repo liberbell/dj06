@@ -1,3 +1,6 @@
+from enum import unique
+from itertools import product
+from turtle import ondrag
 from django.db import models
 from accounts.models import Users
 
@@ -53,3 +56,12 @@ class Carts(models.Model):
 
     class Meta:
         db_table = "carts"
+
+class CartsItem(models.Model):
+    quantity = models.PositiveIntegerField()
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    cart = models.ForeignKey(Carts, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "cart_items"
+        unique_together = [["product", "cart"]]
