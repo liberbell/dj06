@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import Users
 
 # Create your models here.
 class ProductTypes(models.Model):
@@ -43,3 +44,12 @@ class ProductPictures(models.Model):
     
     def __str__(self):
         return self.product.name + ": " + str(self.order)
+
+class Carts(models.Model):
+    user = models.OneToOneField(
+        Users, on_delete=models.CASCADE,
+        primary_key=True
+    )
+
+    class Meta:
+        db_table = "carts"
