@@ -21,5 +21,14 @@
         {% endif %}
     </div>
 </div>
+<script>
+    $('#add_product').click(function)(){
+        var quantity = $("#quantity").val();
+        $.ajax({
+            url: "{% url 'stores:add_product' %}",
+            type: "POST"
+        })
+    }
+</script>
 
 {% endblock content %}
