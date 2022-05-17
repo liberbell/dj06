@@ -8,7 +8,7 @@ from django.http import JsonResponse, Http404
 import os
 
 from .models import (
-    Products
+    Products, Carts, CartsItem
 )
 
 # Create your views here.
@@ -68,7 +68,7 @@ def add_product(request):
             user = request.user
         )
         if all([product_id, cart, quantity]):
-            CartItems.objects.save_item(
+            CartsItem.objects.save_item(
                 quantity = quantity, product_id = product_id,
                 cart = cart[0]
             )
