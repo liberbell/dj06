@@ -49,7 +49,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
     template_name = os.path.join("stores", "product_detail.html")
 
 @login_required
-class add_product(request):
+def add_product(request):
     if request.is_ajax:
         product_id = request.POST.get("product_id")
         quantity = request.POST.get("quantity")
