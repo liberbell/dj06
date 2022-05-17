@@ -26,11 +26,13 @@
         var quantity = $("#quantity").val();
         $.ajax({
             url: "{% url 'stores:add_product' %}",
-            type: "POST"
+            type: "POST",
             data: {product_id: "{{ object.id }}", quantity: quantity},
             datatype: "json",
             success: function(json){
-                if(json.message)
+                if(json.message){
+                    alert(json.message);
+                }
             }
         });
     }
