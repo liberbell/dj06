@@ -3,6 +3,8 @@ from django.views.generic.detail import DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 import os
+
+from requests import request
 from .models import (
     Products
 )
@@ -47,4 +49,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
     template_name = os.path.join("stores", "product_detail.html")
 
 @login_required
-class add_product()
+class add_product(request):
+    if request.is_ajax:
+        product_id = request.POST.get("product_id")
+        quantity = request.POST.get("quantity")
