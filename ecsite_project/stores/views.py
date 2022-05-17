@@ -1,3 +1,4 @@
+from urllib import response
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -53,3 +54,6 @@ def add_product(request):
     if request.is_ajax:
         product_id = request.POST.get("product_id")
         quantity = request.POST.get("quantity")
+        product = get_object_or_404(Products, id=product_id)
+        if int(quantity) > product.stock:
+            response = JsonResponse({"message": "Not enough stock."})
