@@ -33,6 +33,9 @@
                 if(json.message){
                     alert(json.message);
                 }
+            },
+            error: function(error){
+                alert(error.responseJSON.message);
             }
         });
     }
