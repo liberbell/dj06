@@ -64,3 +64,11 @@ def add_product(request):
             response = JsonResponse({"message": "Input above zero."})
             response.status_code = 403
             return response
+        cart = Carts.objects.get_or_create(
+            user = request.user
+        )
+        if all([product_id, cart, quantity]):
+            CartItems.objects.save_item(
+                quantity = quantity, product_id = product_id,
+                cart = cart[0]
+            )
