@@ -59,7 +59,7 @@ class Carts(models.Model):
 
 class CartsItemManager(models.Manager):
 
-    def save_item(self, product_id, quantity):
+    def save_item(self, product_id, quantity, cart):
         c = self.model(quantity=quantity, product_id=product_id, cart=cart)
         c.save()
 
