@@ -22,7 +22,7 @@
     </div>
 </div>
 <script>
-    $('#add_product').click(function)(){
+    $('#add_product').click(function(){
         var quantity = $("#quantity").val();
         $.ajax({
             url: "{% url 'stores:add_product' %}",
@@ -38,7 +38,7 @@
                 alert(error.responseJSON.message);
             }
         });
-    }
+    });
 </script>
 
 {% endblock content %}
