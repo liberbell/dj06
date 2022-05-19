@@ -25,6 +25,7 @@
 <script>
     $('#add_product').click(function(){
         var quantity = $("#quantity").val();
+        var token = $("input[name="csrfToken"]").attr("value");
         $.ajax({
             url: "{% url 'stores:add_product' %}",
             type: "POST",
