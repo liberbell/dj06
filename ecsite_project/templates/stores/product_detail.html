@@ -19,7 +19,7 @@
             <input type="number" id="quantity" name="Quantity" min="1" max="{{ object.stock }}"><br>
             <button id="add_product" type="button" class="btn btn-primary">Add cart</button>
         {% endif %}
-        <input type="text" name="csrfToken">
+        <input type="text" name="csrfToken" value="{{ csrf_token }}" type="hidden">
     </div>
 </div>
 <script>
