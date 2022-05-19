@@ -57,10 +57,18 @@ class Carts(models.Model):
     class Meta:
         db_table = "carts"
 
+class CartsItemManager(models.Manager):
+
+    def save_item(self, product_id, quantity):
+        c = self.model(quantity=quantity, product_id=product_id, cart=cart)
+        c.save()
+
 class CartsItem(models.Model):
     quantity = models.PositiveIntegerField()
     product = models.ForeignKey(Products, on_delete=models.CASCADE)
     cart = models.ForeignKey(Carts, on_delete=models.CASCADE)
+
+    objects = CartsItemManager
 
     class Meta:
         db_table = "cart_items"
