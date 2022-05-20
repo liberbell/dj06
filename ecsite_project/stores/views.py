@@ -64,11 +64,11 @@ def add_product(request):
             response.status_code = 403
             return response
         cart = Carts.objects.get_or_create(
-            user = request.user
+            user=request.user
         )
         if all([product_id, cart, quantity]):
             CartsItem.objects.save_item(
-                quantity = quantity, product_id = product_id,
-                cart = cart[0]
+                quantity=quantity, product_id=product_id,
+                cart=cart[0]
             )
             return JsonResponse({"message": "Add products."})
