@@ -16,7 +16,7 @@
         <p>Product Price: {{ object.price }}</p>
         <p>Product Stock: {{ object.stock }}</p>
         {% if object.stock %}
-            <input type="number" id="quantity" name="Quantity" min="1" max="{{ object.stock }}"><br>
+            <input type="number" id="quantity" name="quantity" min="1" max="{{ object.stock }}"><br>
             <button id="add_product" type="button" class="btn btn-primary">Add cart</button>
         {% endif %}
         <input name="csrfToken" value="{{ csrf_token }}" type="hidden">
