@@ -1,6 +1,3 @@
-from enum import unique
-from itertools import product
-from turtle import ondrag
 from django.db import models
 from accounts.models import Users
 
