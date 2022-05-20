@@ -71,4 +71,4 @@ def add_product(request):
                 quantity = quantity, product_id = product_id,
                 cart = cart[0]
             )
-        return JsonResponse({"message": "Add products."})
+            return JsonResponse({"message": "Add products."})
