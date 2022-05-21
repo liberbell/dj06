@@ -84,3 +84,13 @@ def add_product(request):
 
 class CartItemView(LoginRequiredMixin, TemplateView):
     template_name = os.path.join('store', 'cart_items.html')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        user_id = self.request.user.id
+        query = CartsItem.objects.filter(cart_id=cart_id)
+        total_price = 0
+        items = []
+        for item in query.all():
+            total_price += item.quantity * item.product.price
+        return 
