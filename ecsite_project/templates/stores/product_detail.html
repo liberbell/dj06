@@ -18,9 +18,10 @@
         {% if object.stock %}
             {% if is_added %}
                 <p class="btn btn-danger">Already added.</p>
+            {% else %}
+                <input type="number" id="quantity" name="quantity" min="1" max="{{ object.stock }}"><br>
+                <button id="add_product" type="button" class="btn btn-primary">Add cart</button>
             {% endif %}
-            <input type="number" id="quantity" name="quantity" min="1" max="{{ object.stock }}"><br>
-            <button id="add_product" type="button" class="btn btn-primary">Add cart</button>
         {% endif %}
         <input name="csrfToken" value="{{ csrf_token }}" type="hidden">
     </div>
