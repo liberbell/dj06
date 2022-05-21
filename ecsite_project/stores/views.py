@@ -48,6 +48,14 @@ class ProductListView(LoginRequiredMixin, ListView):
 class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Products
     template_name = os.path.join("stores", "product_detail.html")
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["is_added"] = CartsItem.objects.filter(
+            cart_id = self.request.user.id,
+            product_id = kwargs.get("object").id
+        )
+        return 
 
 @login_required
 def add_product(request):
