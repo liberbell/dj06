@@ -54,8 +54,8 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         context["is_added"] = CartsItem.objects.filter(
             cart_id = self.request.user.id,
             product_id = kwargs.get("object").id
-        )
-        return 
+        ).first()
+        return context
 
 @login_required
 def add_product(request):
