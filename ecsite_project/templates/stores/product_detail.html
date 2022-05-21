@@ -25,10 +25,10 @@
 <script>
     $('#add_product').click(function(){
         var quantity = $("#quantity").val();
-        var token = $("input[name="csrfToken"]").attr("value");
+        var token = $('input[name="csrfToken"]').attr('value');
         $.ajaxSetup({
             beforeSend: function(xhr){
-                xhr.setRequestHeader("X-CSRFToken", token);
+                xhr.setRequestHeader('X-CSRFToken', token);
             }
         })
         $.ajax({
