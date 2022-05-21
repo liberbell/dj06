@@ -95,4 +95,10 @@ class CartItemView(LoginRequiredMixin, TemplateView):
             total_price += item.quantity * item.product.price
             picture = item.product.productpictures_set.first()
             picture = picture.picture if picture else None
+            in_stock = True if item.product.stock >= item.quantity else False
+            temp_item = {
+                "quantity": item.quantity,
+                "picture": picture,
+                "name": item.product.name,
+            }
         return 
