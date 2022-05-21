@@ -82,4 +82,5 @@ def add_product(request):
             )
             return JsonResponse({"message": "Add products."})
 
-class CartItemView(LoginRequiredMixin, Template)
+class CartItemView(LoginRequiredMixin, TemplateView):
+    template_name = os.path.join('store', 'cart_items.html')
