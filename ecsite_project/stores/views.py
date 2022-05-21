@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.views.generic.base import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, Http404
@@ -80,3 +81,5 @@ def add_product(request):
                 cart=cart[0]
             )
             return JsonResponse({"message": "Add products."})
+
+class CartItemView(LoginRequiredMixin, Template)
