@@ -110,3 +110,9 @@ class CartItemView(LoginRequiredMixin, TemplateView):
         context["total_price"] = total_price
         context["items"] = items
         return context
+
+class CartUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = os.path.join("stores", "update_cart.html")
+    form_class = CartUpdateForm
+    model = CartsItem
+    success_url = reverse_razy("stores:cart_items")
