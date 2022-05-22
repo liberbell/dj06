@@ -13,6 +13,10 @@ from .models import (
     Products, Carts, CartsItem
 )
 
+from .forms import (
+    CartUpdateForm
+)
+
 # Create your views here.
 class ProductListView(LoginRequiredMixin, ListView):
     model = Products
