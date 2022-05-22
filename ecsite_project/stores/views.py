@@ -83,7 +83,7 @@ def add_product(request):
             return JsonResponse({"message": "Add products."})
 
 class CartItemView(LoginRequiredMixin, TemplateView):
-    template_name = os.path.join('store', 'cart_items.html')
+    template_name = os.path.join('stores', 'cart_items.html')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
