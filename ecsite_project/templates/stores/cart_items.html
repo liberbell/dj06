@@ -2,6 +2,18 @@
 
 {% block content %}
 <div class="col-10 offset-1">
-    
+    {% if items %}
+    <table>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                {% if item.picture %}
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    {% endif %}
 </div>
 {% endblock content %}
