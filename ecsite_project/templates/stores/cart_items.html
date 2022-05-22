@@ -8,6 +8,7 @@
             {% for item in items %}
             <tr>
                 {% if item.picture %}
+                    <img src="{{ item.picture.url }}" width="75px" height="75px">
                 {% endif %}
             </tr>
             {% endfor %}
