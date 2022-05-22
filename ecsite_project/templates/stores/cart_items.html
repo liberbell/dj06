@@ -7,9 +7,18 @@
         <tbody>
             {% for item in items %}
             <tr>
-                <td>
+                <td style="width:20%">
                     {% if item.picture %}
                         <img src="{{ item.picture.url }}" width="75px" height="75px">
+                    {% endif %}
+                </td>
+                <td style="width:20%">
+                    {{ item.name }}<br>${{ item.price }}
+                </td>
+                <td>
+                    {{ item.quantity }}<br>
+                    {% if not item.in_stock %}
+                        Over stock.Check quantity.
                     {% endif %}
                 </td>
             </tr>
