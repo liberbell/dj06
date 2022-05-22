@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, Http404
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
+from django.urls import reverse_lazy
 import os
 
 from .models import (
@@ -116,3 +117,8 @@ class CartUpdateView(LoginRequiredMixin, UpdateView):
     form_class = CartUpdateForm
     model = CartsItem
     success_url = reverse_razy("stores:cart_items")
+
+class CartDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = os.path.join("stores", "delete_cart.html")
+    model = CartsItem
+    success_url = reverse_raze("soters:cart_items")
