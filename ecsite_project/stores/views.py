@@ -100,5 +100,8 @@ class CartItemView(LoginRequiredMixin, TemplateView):
                 "quantity": item.quantity,
                 "picture": picture,
                 "name": item.product.name,
+                "id": item.id,
+                "price": item.product.price,
+                "instock"
             }
         return 
