@@ -107,5 +107,5 @@ class CartItemView(LoginRequiredMixin, TemplateView):
             items.append(temp_item)
         
         context["total_proce"] = total_price
-        contest["items"] = items
+        context["items"] = items
         return context
