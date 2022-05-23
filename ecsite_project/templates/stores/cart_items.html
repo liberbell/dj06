@@ -22,8 +22,8 @@
                     {% endif %}
                 </td>
                 <td align="right">
-                    <a href="{% url "stores:update_cart" %}" class="btn btn-primary" pk=item.id>Update</a>
-                    <a href="{% url "stores:delete_cart" %}" class="btn btn-danger" pk=item.id>Delete</a>
+                    <a href="{% url "stores:update_cart" pk=item.id %}" class="btn btn-primary">Update</a>
+                    <a href="{% url "stores:delete_cart" pk=item.id %}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             {% endfor %}
