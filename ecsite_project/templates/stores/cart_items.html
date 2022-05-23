@@ -18,8 +18,11 @@
                 <td>
                     {{ item.quantity }}<br>
                     {% if not item.in_stock %}
-                        Over stock.Check quantity.
+                        Over stock. Check quantity.
                     {% endif %}
+                </td>
+                <td align="right">
+                    <a href="{% url "stores:update_cart" %}" class="btn btn-primary"></a>
                 </td>
             </tr>
             {% endfor %}
