@@ -3,7 +3,7 @@
 {% block content %}
 <h2>{{ object.product.name }} Delete?</h2>
 <form method="POST">
-    {{ forms.as_p }}
+    {% csrf_token %}
     <input type="submit" value="Delete">
 </form>
 {% endblock content %}
