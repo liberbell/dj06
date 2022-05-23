@@ -13,10 +13,9 @@ class CartUpdateForm(forms.ModelForm):
         fields = ["quantity", "id"]
 
     def clean(self):
-        clean_field(self):
-            cleand_data = super().clean()
-            quantity = cleand_data.get("quantity")
-            id = cleand_data.get("id")
-            cart_item = get_object_or_404(CartsItem, pk=id)
-            if quantity > cart_item.product.stock:
-                raise ValidationError(f"Over stocks. Input under {cart_item.product.stock}.")
+        cleand_data = super().clean()
+        quantity = cleand_data.get("quantity")
+        id = cleand_data.get("id")
+        cart_item = get_object_or_404(CartsItem, pk=id)
+        if quantity > cart_item.product.stock:
+            raise ValidationError(f"Over stocks. Input under {cart_item.product.stock}.")
