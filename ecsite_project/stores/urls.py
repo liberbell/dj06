@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProductListView, ProductDetailView, add_product, CartItemView
+from .views import ProductListView, ProductDetailView, add_product, CartItemView, CartUpdateView, CartDeleteView
 
 app_name = "stores"
 urlpatterns = [
