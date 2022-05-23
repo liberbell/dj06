@@ -3,7 +3,6 @@
 {% block content %}
 <h2>{{ object.product.name }} Delete?</h2>
 <form method="POST">
-    {% csrf_token %}
     {{ forms.as_p }}
     <input type="submit" value="Delete">
 </form>
