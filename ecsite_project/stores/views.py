@@ -120,9 +120,9 @@ class CartUpdateView(LoginRequiredMixin, UpdateView):
     template_name = os.path.join("stores", "update_cart.html")
     form_class = CartUpdateForm
     model = CartsItem
-    success_url = reverse_razy("stores:cart_items")
+    success_url = reverse_lazy("stores:cart_items")
 
 class CartDeleteView(LoginRequiredMixin, DeleteView):
     template_name = os.path.join("stores", "delete_cart.html")
     model = CartsItem
-    success_url = reverse_raze("soters:cart_items")
+    success_url = reverse_lazy("soters:cart_items")
