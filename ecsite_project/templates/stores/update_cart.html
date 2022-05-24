@@ -3,6 +3,7 @@
 {% block content %}
 <form method="POST">
     {% csrf_token %}
+    <p>{{ object.product.name }} {{ object.product.stock }}</p>
     {{ form.as_p }}
     <input type="submit" value="Update">
 </form>
