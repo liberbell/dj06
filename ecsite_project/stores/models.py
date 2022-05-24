@@ -70,3 +70,9 @@ class CartsItem(models.Model):
     class Meta:
         db_table = "cart_items"
         unique_together = [["product", "cart"]]
+
+class Adresses(models.Model):
+    zip_code = models.CharField(max_length=8)
+    prefecture = models.CharField(max_length=15)
+    address = models.CharField(max_length=150)
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
