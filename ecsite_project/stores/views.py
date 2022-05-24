@@ -14,7 +14,7 @@ from .models import (
 )
 
 from .forms import (
-    CartUpdateForm
+    CartUpdateForm, AddressInputForm
 )
 
 # Create your views here.
