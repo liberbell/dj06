@@ -19,3 +19,6 @@ class CartUpdateForm(forms.ModelForm):
         cart_item = get_object_or_404(CartsItem, pk=id)
         if quantity > cart_item.product.stock:
             raise ValidationError(f"Over stocks. Input under {cart_item.product.stock}.")
+
+class AddressInputForm(forms.ModelForm):
+    address = forms.CharField(label="Address", widget=forms.TextInput(attrs={"size": "80"}))
