@@ -76,3 +76,9 @@ class Adresses(models.Model):
     prefecture = models.CharField(max_length=15)
     address = models.CharField(max_length=150)
     user = models.ForeignKey(Users, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = "addresses"
+    
+    def __str__(self):
+        return f'{self.zip_code} {self.prefecture} {self.address}'
