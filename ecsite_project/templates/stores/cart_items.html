@@ -31,6 +31,7 @@
     </table>
     <hr>
     <h3 class="offset-9">Sum: ${{ total_price }}</h3>
+    <a href="{% url "stores:input_address" %}" class="offset-9 btn btn-secondary">Input Address</a>
     {% else %}
     <h2>No items.</h2>
     {% endif %}
