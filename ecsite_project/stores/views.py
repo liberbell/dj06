@@ -131,3 +131,6 @@ class InputAddressView(LoginRequiredMixin, CreateView):
     template_name = os.path.join("stores", "input_address.html")
     form_class = AddressInputForm
     success_url = reverse_lazy("stores:cart_items")
+
+    def get(self, request):
+        cart = get_object_or_404(Carts, user_id=request.user.id)
