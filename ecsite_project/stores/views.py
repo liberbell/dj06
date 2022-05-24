@@ -126,3 +126,6 @@ class CartDeleteView(LoginRequiredMixin, DeleteView):
     template_name = os.path.join("stores", "delete_cart.html")
     model = CartsItem
     success_url = reverse_lazy("stores:cart_items")
+
+class InputAddressView(LoginRequiredMixin, CreateView):
+    template_name = os.path.join("stores", "input_address.html")
