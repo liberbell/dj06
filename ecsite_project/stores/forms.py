@@ -27,4 +27,8 @@ class AddressInputForm(forms.ModelForm):
     class Meta:
         model = Adresses
         fields = ["zip_code", "prefecture", "address"]
+        lables = {
+            "zip_code": "Zip Code",
+            "prefecture": "Prefecture",
+        }
         
