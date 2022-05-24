@@ -1,6 +1,7 @@
+from email.headerregistry import Address
 from xml.dom import ValidationErr
 from django import forms
-from .models import CartsItem
+from .models import CartsItem, Adresses
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
 
@@ -22,3 +23,8 @@ class CartUpdateForm(forms.ModelForm):
 
 class AddressInputForm(forms.ModelForm):
     address = forms.CharField(label="Address", widget=forms.TextInput(attrs={"size": "80"}))
+
+    class Meta:
+        model = Adresses
+        fields = ["zip_code", "prefecture", "address"]
+        
