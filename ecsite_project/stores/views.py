@@ -137,3 +137,7 @@ class InputAddressView(LoginRequiredMixin, CreateView):
         if not cart.cartsitem_set.all():
             raise Http404("Not items.")
         return super().get(request)
+
+    def form_valid(self, form):
+        form.user = self.request.user
+        return super().form_valid(form)
