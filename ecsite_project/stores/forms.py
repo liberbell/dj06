@@ -4,6 +4,7 @@ from django import forms
 from .models import CartsItem, Adresses
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ValidationError
+from django.core.cache import cache
 
 class CartUpdateForm(forms.ModelForm):
     quantity = forms.IntegerField(label="stocks", min_value=1)
