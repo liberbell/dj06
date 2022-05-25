@@ -37,4 +37,6 @@ class AddressInputForm(forms.ModelForm):
         address = super().save(commit=False)
         address.user = self.user
         address.save()
+        cache.set(f"address_user_{self.user.id}", address)
+
         return address
