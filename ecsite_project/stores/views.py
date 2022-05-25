@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, Http404
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
+from django.core.cache import cache
 import os
 
 from .models import (
@@ -137,6 +138,15 @@ class InputAddressView(LoginRequiredMixin, CreateView):
         if not cart.cartsitem_set.all():
             raise Http404("Not items.")
         return super().get(request)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        address = cache.get(f"address_user_{self.request.user.id}", address)
+        if address:
+            context["form"].fields["zip_code"].initial = address.zip_code
+            context["form"].fields["prefecture"].initial = address.prefecture
+            context["form"].fields["address"].initial = address.address
+        return context
 
     def form_valid(self, form):
         form.user = self.request.user
