@@ -9,5 +9,10 @@
         {{ form.as_p }}
         <input type="submit" value="Set address">
     </form>
+    <hr>
+    <h3>address history</h3>
+    {% for address in addresses %}
+    <p>{{ address }}</p>
+    {% endfor %}
 </div>
 {% endblock content %}
