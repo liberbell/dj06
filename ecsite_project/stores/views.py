@@ -11,7 +11,7 @@ from django.core.cache import cache
 import os
 
 from .models import (
-    Products, Carts, CartsItem
+    Products, Carts, CartsItem, Adresses
 )
 
 from .forms import (
@@ -146,6 +146,7 @@ class InputAddressView(LoginRequiredMixin, CreateView):
             context["form"].fields["zip_code"].initial = address.zip_code
             context["form"].fields["prefecture"].initial = address.prefecture
             context["form"].fields["address"].initial = address.address
+        context["addresses"] = Adresses.objects.filter(user=self.request.user)
         return context
 
     def form_valid(self, form):
